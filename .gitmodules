@@ -1,0 +1,3 @@
+[submodule "src/submodules/frosthaven-data"]
+	path = src/submodules/frosthaven-data
+	url = git@github.com:any2cards/frosthaven.git

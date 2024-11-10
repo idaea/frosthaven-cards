@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	font-family: system-ui, sans-serif;
+	font-weight: 400;
+}
+
+label {
+	user-select: none;
+}
+
+@font-face {
+	font-family: Gloomhaven;
+	src: url("./submodules/frosthaven-data/images/art/frosthaven/fonts/PirataOne-Gloomhaven.ttf");
+}
