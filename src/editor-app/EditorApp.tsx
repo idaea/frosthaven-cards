@@ -69,7 +69,7 @@ function EditorApp() {
 
 			<CardSelector className="mb-2" currentCard={currentCard} />
 
-			<div className="flex w-full h-[480px] lg:h-[640px]">
+			<div className="flex w-full h-[480px] md:h-[600px] lg:h-[720px]">
 				{hasSelectedDot ? (
 					<DotEditor className="flex-1 min-w-0 p-4" />
 				) : (

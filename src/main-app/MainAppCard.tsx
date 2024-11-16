@@ -5,9 +5,9 @@ import { enhancementStickerTypeLookup } from "../common/enhancementStickerTypes"
 import { selectCostCalculator, useMainAppStore } from "./useMainAppStore";
 import { StickerSelector } from "./StickerSelector";
 import type { CardViewModel, DotViewModel } from "./viewModelDatabase";
-
-const HIGHLIGHT_SIZE = 11;
-const STICKER_SIZE = 9;
+import { cardDatabase } from "../card-data";
+import { getCharacterByID } from "../common/characters";
+import { getDotShapeIconSrc } from "../common/getDotShapeIconSrc";
 
 export function MainAppCard({
 	card,
@@ -28,7 +28,6 @@ export function MainAppCard({
 					<CardDot
 						key={dot.id}
 						dot={dot}
-						selectedDot={selectedDot}
 						onClick={() => {
 							onSelectDot?.(dot);
 						}}
@@ -60,15 +59,17 @@ export function MainAppCard({
 
 function CardDot({
 	dot,
-	selectedDot,
 	onClick,
 }: {
 	dot: DotViewModel;
-	selectedDot: DotViewModel | undefined;
 	onClick?: () => void;
 }) {
 	const dotIDToSticker = useMainAppStore((state) => state.dotIDToSticker);
 	const calculateDotCost = useMainAppStore(selectCostCalculator);
+
+	const character = getCharacterByID(
+		cardDatabase.lookup.get(dot.cardId)!.character
+	);
 
 	const sticker =
 		dotIDToSticker[dot.id] !== undefined
@@ -83,17 +84,20 @@ function CardDot({
 				key={dot.id}
 				x={x}
 				y={y}
-				size={sticker ? STICKER_SIZE : HIGHLIGHT_SIZE}
-				imgSrc={sticker?.iconSrc}
-				className={[
-					"cursor-pointer",
-					sticker === undefined && [
-						"bg-white",
-						dot.id === selectedDot?.id
-							? "opacity-30"
-							: ["opacity-0", "hover:opacity-30"],
-					],
-				]}
+				image={{
+					src: sticker?.iconSrc ?? getDotShapeIconSrc(dot.dotShape),
+					size: sticker ? (sticker.id === "hex" ? 11.5 : 9) : 6,
+				}}
+				highlight={
+					sticker
+						? undefined
+						: {
+								color: `hsl(from ${character.colour} calc(h + 180) 100% 70%)`,
+								// be brighter on top half since the background is brighter
+								opacity: dot.cardHalf === "top" ? 1 : 0.8,
+								size: 16,
+							}
+				}
 				onClick={() => {
 					onClick?.();
 				}}
@@ -105,6 +109,7 @@ function CardDot({
 					style={{
 						left: `${(3 + x * 100).toFixed(2)}%`,
 						top: `${(3 + y * 100).toFixed(2)}%`,
+						textShadow: "2px 2px black",
 					}}
 				>
 					{calculateDotCost(dot, sticker.id)}

@@ -1,11 +1,6 @@
-import { useId, useMemo, useState } from "react";
-import type { ClassValue } from "clsx";
-import clsx from "clsx";
+import { useId, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { IconButton } from "../common/IconButton";
-import type {
-	Character} from "../common/characters";
 import {
 	characters,
 	getCharacterByShortID,
@@ -16,10 +11,9 @@ import { TextButton } from "../common/TextButton";
 
 import { MainAppCard } from "./MainAppCard";
 import { useMainAppStore } from "./useMainAppStore";
-import type { DotViewModel} from "./viewModelDatabase";
+import type { DotViewModel } from "./viewModelDatabase";
 import { viewModelDatabase } from "./viewModelDatabase";
-
-
+import { CharacterSelector } from "./CharacterSelector";
 
 export { MainApp as Component };
 
@@ -151,63 +145,6 @@ function MainApp() {
 					</TextButton>
 				</div>
 			)}
-		</div>
-	);
-}
-
-function CharacterSelector({
-	selectedCharacter,
-	onSelectCharacter,
-	className,
-}: {
-	selectedCharacter: Character;
-	onSelectCharacter?: (character: Character) => void;
-	className?: ClassValue;
-}) {
-	const unlockedCharacters = useMainAppStore(
-		(state) => state.unlockedCharacters
-	);
-
-	const viewModels = useMemo(() => {
-		return characters
-			.map((c) => ({
-				...c,
-				isLocked:
-					c.isAlwaysUnlocked !== true && unlockedCharacters[c.id] !== true,
-				isSelected: c.id === selectedCharacter.id,
-			}))
-			.sort((a, b) => {
-				if (a.isLocked && !b.isLocked) {
-					return 1;
-				} else if (b.isLocked && !a.isLocked) {
-					return -1;
-				} else {
-					return 0;
-				}
-			});
-	}, [unlockedCharacters, selectedCharacter]);
-
-	return (
-		<div
-			className={clsx(
-				"flex gap-1.5 justify-end flex-wrap items-center",
-				className
-			)}
-		>
-			{viewModels.map((c) => (
-				<IconButton
-					key={c.id}
-					src={c.iconSrc}
-					color={c.colour}
-					size={c.isSelected ? "xl" : c.isLocked ? "md" : "lg"}
-					sizeResponsive
-					selected={c.isSelected}
-					renderAsDisabled={c.isLocked}
-					onClick={() => {
-						onSelectCharacter?.(c);
-					}}
-				/>
-			))}
 		</div>
 	);
 }

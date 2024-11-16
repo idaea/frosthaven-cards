@@ -31,6 +31,8 @@ export const multiAffectingPlus1Target = new Set([
 	"push",
 	"pull",
 	"teleport",
+	"summon-hp",
+	"summon-move",
 	"summon-attack",
 	"summon-range",
 ] as const satisfies Plus1Target[]);

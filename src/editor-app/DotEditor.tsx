@@ -6,10 +6,6 @@ import tokenIcon from "../submodules/frosthaven-data/images/art/frosthaven/icons
 import strengthenIcon from "../submodules/frosthaven-data/images/art/frosthaven/icons/conditions/fh-strengthen-bw-icon.png";
 import poisonIcon from "../submodules/frosthaven-data/images/art/frosthaven/icons/conditions/fh-poison-bw-icon.png";
 
-import squareSvg from "../images/square.svg";
-import diamondSvg from "../images/diamond.svg";
-import diamondPlusSvg from "../images/diamond-plus.svg";
-import circleSvg from "../images/circle.svg";
 import type {
 	PlayerPlus1Target,
 	SummonPlus1Target,
@@ -22,6 +18,7 @@ import type { DotShape } from "../card-data";
 import { enhancementStickerTypeLookup as s } from "../common/enhancementStickerTypes";
 
 import { selectSelectedDot, useEditorStore } from "./useEditorStore";
+import { getDotShapeIconSrc } from "../common/getDotShapeIconSrc";
 
 const moveIcon = getPlus1ImgSrc("move");
 const attackIcon = getPlus1ImgSrc("attack");
@@ -36,7 +33,6 @@ const pullIcon = getPlus1ImgSrc("pull");
 const teleportIcon = getPlus1ImgSrc("teleport");
 
 const plus1Icon = s["plus1"].iconSrc;
-const hexIcon = s["hex"].iconSrc;
 
 export function DotEditor({ className }: { className?: ClassValue }) {
 	const selectedDot = useEditorStore(selectSelectedDot);
@@ -89,26 +85,20 @@ function DotShapeSelector({
 }) {
 	return (
 		<div className={clsx("flex", "gap-1", className)}>
-			{(
-				[
-					["square", squareSvg],
-					["circle", circleSvg],
-					["diamond", diamondSvg],
-					["diamond-plus", diamondPlusSvg],
-					["hex", hexIcon],
-				] as Array<[DotShape, string]>
-			).map(([id, iconSrc]) => (
-				<IconButton
-					key={id}
-					src={iconSrc}
-					selected={value === id}
-					onClick={() => {
-						if (value !== id) {
-							onChange?.(id);
-						}
-					}}
-				/>
-			))}
+			{(["square", "circle", "diamond", "diamond-plus", "hex"] as const).map(
+				(dotShape) => (
+					<IconButton
+						key={dotShape}
+						src={getDotShapeIconSrc(dotShape)}
+						selected={value === dotShape}
+						onClick={() => {
+							if (value !== dotShape) {
+								onChange?.(dotShape);
+							}
+						}}
+					/>
+				)
+			)}
 		</div>
 	);
 }

@@ -1,13 +1,11 @@
 import type { ClassValue } from "clsx";
-import clsx from "clsx";
 
 import { Highlight } from "../common/Highlight";
 import { Card } from "../common/Card";
 import type { Coords } from "../common/Coords";
 
 import { selectSelectedDot, useEditorStore } from "./useEditorStore";
-
-const HIGHLIGHT_SIZE = 11;
+import { getDotShapeIconSrc } from "../common/getDotShapeIconSrc";
 
 export function EditorCard({
 	id: cardId,
@@ -54,28 +52,36 @@ export function EditorCard({
 			{[
 				...(cardAnnotations?.top?.dots ?? []),
 				...(cardAnnotations?.bottom?.dots ?? []),
-			].map((dot) => (
-				<Highlight
-					key={dot.id}
-					x={dot.coords[0]}
-					y={dot.coords[1]}
-					size={HIGHLIGHT_SIZE}
-					className={clsx([
-						selectedDot &&
-						selectedDot.cardId === cardId &&
-						dot.id === selectedDot.dot.id
-							? ["bg-red-600", "pointer-events-none"]
-							: ["bg-green-50", "opacity-50", "cursor-pointer"],
-						"opacity-50",
-					])}
-					onClick={() => {
-						selectDot({
-							cardId,
-							dotId: dot.id,
-						});
-					}}
-				/>
-			))}
+			].map((dot) => {
+				const isSelected = selectedDot && dot.id === selectedDot.dot.id;
+				return (
+					<Highlight
+						key={dot.id}
+						x={dot.coords[0]}
+						y={dot.coords[1]}
+						image={{
+							src: getDotShapeIconSrc(dot.enhanceableDetails.dotShape),
+							opacity: 0.4,
+							size: 6,
+						}}
+						highlight={{
+							color: isSelected ? "red" : "white",
+							opacity: 0.4,
+							size: 16,
+						}}
+						onClick={
+							isSelected
+								? undefined
+								: () => {
+										selectDot({
+											cardId,
+											dotId: dot.id,
+										});
+									}
+						}
+					/>
+				);
+			})}
 		</Card>
 	);
 }

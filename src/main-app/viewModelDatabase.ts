@@ -1,11 +1,12 @@
 import invariant from "tiny-invariant";
 
 import { bundledCardAnnotations } from "../bundledCardAnnotations";
-import type { CardAction, DotShape } from "../card-data";
+import type { CardAnnotations, DotShape } from "../card-data";
 import { cardDatabase } from "../card-data";
 import type { CardData } from "../CardData";
 import type { Coords } from "../common/Coords";
 import type { Plus1Target } from "../common/plus-1-targets";
+import { CardHalfName } from "../common/card-dimensions";
 
 export const viewModelDatabase = deriveViewModelDatabase();
 
@@ -17,10 +18,10 @@ function deriveViewModelDatabase(): ViewModelDatabase {
 			...card,
 			dots: [
 				...(annotations?.top
-					? getDotsFromAction(card.id, card.level, annotations.top)
+					? getDotsFromAction(card.id, card.level, annotations, "top")
 					: []),
 				...(annotations?.bottom
-					? getDotsFromAction(card.id, card.level, annotations.bottom)
+					? getDotsFromAction(card.id, card.level, annotations, "bottom")
 					: []),
 			],
 		};
@@ -56,14 +57,17 @@ function deriveViewModelDatabase(): ViewModelDatabase {
 function getDotsFromAction(
 	cardId: string,
 	cardLevel: number,
-	cardAction: CardAction
+	cardAnnotations: CardAnnotations,
+	cardHalf: CardHalfName
 ): Array<DotViewModel> {
+	const cardAction = cardAnnotations[cardHalf];
 	const allDotsOnAction = cardAction.dots.map((x) => x.id);
 
 	return cardAction.dots.map((dot) => ({
 		id: dot.id,
 		cardId,
 		cardLevel,
+		cardHalf,
 		otherDotsOnSameAction: allDotsOnAction.filter((x) => x !== dot.id),
 		isOnLossAction: cardAction.isLoss,
 		isOnPersistentAction: cardAction.isPersistent,
@@ -89,6 +93,7 @@ export interface DotViewModel {
 	readonly id: string;
 	readonly cardId: string;
 	readonly cardLevel: number;
+	readonly cardHalf: CardHalfName;
 	readonly otherDotsOnSameAction: string[];
 	readonly isOnLossAction: boolean;
 	readonly isOnPersistentAction: boolean;
