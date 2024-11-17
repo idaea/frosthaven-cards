@@ -5,11 +5,8 @@ import { isSummonPlus1Target } from "../plus-1-targets";
 import type { StickerTypeID } from "../enhancementStickerTypes";
 import { isElement } from "../enhancementStickerTypes";
 
-import {
-	PricingStrategies
-	
-} from "./PricingStrategies";
-import type {PricingStrategyType} from "./PricingStrategies";
+import { PricingStrategies } from "./PricingStrategies";
+import type { PricingStrategyType } from "./PricingStrategies";
 
 interface CostFactors {
 	stickerType: StickerTypeID;
@@ -70,33 +67,43 @@ export function calculateCost({
 		cost += pricingStrategy.getOtherStickerBaseCost(stickerType);
 	}
 
-	// double BASE COST if multiple targets (does not apply for attack hex)
+	/*
+		1: "If the ability targets multiple figures or tiles, double the cost. This
+		   applies to abilities that summon or affect multiple allies or tokens and to
+		   abilities that can target multiple figures or tiles. This does not apply to
+		   target, area-of-effect hex, or element enhancements."
+	*/
 	if (hasMultipleTargets && shouldDoubleDueToMultipleTargets()) {
 		cost *= 2;
 	}
 
-	// halve BASE COST if lost
-	if (isLoss) {
+	// 2: "If the action has a lost icon, but no persistent icon, halve the cost"
+	if (isLoss && !isPersistent) {
 		cost /= 2;
 	}
 
-	// triple BASE COST if persistent bonus
+	/*
+		3: "If the ability provides a persistent bonus, whether or not the action has a lost
+		   icon, triple the cost. This does not apply to summon stat enhancements."
+	*/
 	if (
 		isPersistent &&
-		stickerType !== "plus1" &&
-		!!plus1Target &&
-		isSummonPlus1Target(plus1Target)
+		!(
+			stickerType === "plus1" &&
+			!!plus1Target &&
+			isSummonPlus1Target(plus1Target)
+		)
 	) {
 		cost *= 3;
 	}
 
-	// extra cost for level of ability card
+	// 4: "For each level of the ability card above level 1, add 25 gold to the cost"
 	cost += pricingStrategy.getCostFromCardLevel(
 		levelOfAbilityCard,
 		enhancerLevel
 	);
 
-	// extra cost for previous enhancements to the same action
+	// 5: "For each enhancement already on the action, add 75 gold to the cost"
 	cost += pricingStrategy.getCostFromPriorEnhancements(
 		numberOfPreviousEnhancements,
 		enhancerLevel
