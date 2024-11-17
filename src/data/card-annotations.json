@@ -1531,26 +1531,26 @@
 		"bottom": {
 			"dots": [
 				{
-					"coords": [0.484719521590784, 0.6953125],
+					"coords": [0.484952843110398, 0.6983333333333334],
 					"enhanceableDetails": {
 						"affectsMultiple": false,
 						"dotShape": "square",
-						"plus1Target": "heal"
+						"plus1Target": "summon-hp"
 					},
 					"id": "iNxGT"
 				},
 				{
-					"coords": [0.7993542943097186, 0.6953125],
+					"coords": [0.800532227135757, 0.6983333333333334],
 					"enhanceableDetails": {
 						"affectsMultiple": false,
 						"dotShape": "square",
-						"plus1Target": "move"
+						"plus1Target": "summon-move"
 					},
 					"id": "YqecD"
 				}
 			],
-			"isLoss": true,
-			"isPersistent": false
+			"isLoss": false,
+			"isPersistent": true
 		},
 		"top": {
 			"dots": [],
@@ -1562,7 +1562,7 @@
 		"bottom": {
 			"dots": [
 				{
-					"coords": [0.45184723190373116, 0.7140625],
+					"coords": [0.44988846710758035, 0.715],
 					"enhanceableDetails": {
 						"affectsMultiple": false,
 						"dotShape": "square",
@@ -1577,7 +1577,7 @@
 		"top": {
 			"dots": [
 				{
-					"coords": [0.7594379425468687, 0.228125],
+					"coords": [0.7579540562751927, 0.23],
 					"enhanceableDetails": {
 						"affectsMultiple": false,
 						"baseNumHexes": 1,
@@ -1880,7 +1880,7 @@
 		"bottom": {
 			"dots": [
 				{
-					"coords": [0.43775910775213706, 0.8328125],
+					"coords": [0.434860877392087, 0.8316666666666667],
 					"enhanceableDetails": {
 						"affectsMultiple": false,
 						"dotShape": "circle",
@@ -1927,7 +1927,7 @@
 		"top": {
 			"dots": [
 				{
-					"coords": [0.4964596250504458, 0.1953125],
+					"coords": [0.4949712362540602, 0.19666666666666666],
 					"enhanceableDetails": {
 						"affectsMultiple": false,
 						"dotShape": "diamond",
@@ -1966,7 +1966,7 @@
 		"bottom": {
 			"dots": [
 				{
-					"coords": [0.6302968044905896, 0.66875],
+					"coords": [0.6302195436934998, 0.67],
 					"enhanceableDetails": {
 						"affectsMultiple": false,
 						"dotShape": "circle",
@@ -2029,7 +2029,7 @@
 		"bottom": {
 			"dots": [
 				{
-					"coords": [0.44715119051986646, 0.715625],
+					"coords": [0.44738386882166475, 0.715],
 					"enhanceableDetails": {
 						"affectsMultiple": false,
 						"dotShape": "square",
@@ -2038,7 +2038,7 @@
 					"id": "YoiUS"
 				},
 				{
-					"coords": [0.6749091976373042, 0.7140625],
+					"coords": [0.6803115094118107, 0.715],
 					"enhanceableDetails": {
 						"affectsMultiple": false,
 						"dotShape": "square",
@@ -2047,7 +2047,7 @@
 					"id": "Xu9hB"
 				},
 				{
-					"coords": [0.44715119051986646, 0.7890625],
+					"coords": [0.44738386882166475, 0.7916666666666666],
 					"enhanceableDetails": {
 						"affectsMultiple": false,
 						"dotShape": "square",
@@ -2245,7 +2245,7 @@
 					"id": "AKCns"
 				},
 				{
-					"coords": [0.6772572183292366, 0.7203125],
+					"coords": [0.6778069111258952, 0.7216666666666667],
 					"enhanceableDetails": {
 						"affectsMultiple": false,
 						"dotShape": "square",
@@ -2359,7 +2359,7 @@
 		"bottom": {
 			"dots": [
 				{
-					"coords": [0.44245514913600176, 0.7203125],
+					"coords": [0.4423746722498337, 0.7216666666666667],
 					"enhanceableDetails": {
 						"affectsMultiple": false,
 						"dotShape": "square",
@@ -2388,7 +2388,7 @@
 				{
 					"coords": [0.4941116043585134, 0.18125],
 					"enhanceableDetails": {
-						"affectsMultiple": false,
+						"affectsMultiple": true,
 						"dotShape": "diamond",
 						"plus1Target": "attack"
 					},
@@ -3011,7 +3011,7 @@
 				{
 					"coords": [0.632644825182522, 0.184375],
 					"enhanceableDetails": {
-						"affectsMultiple": false,
+						"affectsMultiple": true,
 						"dotShape": "square",
 						"plus1Target": "range"
 					},
