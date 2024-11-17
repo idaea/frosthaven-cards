@@ -6541,6 +6541,794 @@
 			"isPersistent": false
 		}
 	},
+	"273": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6220975737020611, 0.7611111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "L1UF5"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.668014609966084, 0.30416666666666664],
+					"enhanceableDetails": {
+						"affectsMultiple": true,
+						"dotShape": "square",
+						"plus1Target": "range"
+					},
+					"id": "dIpB2"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"274": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.45512653274197756, 0.6861111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "54bY5"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": true
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"275": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.5093921210540047, 0.7638888888888888],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "DMUFo"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.5532220193060267, 0.25],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "attack-trap"
+					},
+					"id": "IqHte"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"276": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.5281763631620141, 0.2625],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "attack-trap"
+					},
+					"id": "xTvLM"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"277": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": true,
+			"isPersistent": false
+		}
+	},
+	"278": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6262718497260631, 0.6986111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "277S2"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"279": {
+		"bottom": {
+			"dots": [],
+			"isLoss": true,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.5991390555700495, 0.2708333333333333],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "heal-trap"
+					},
+					"id": "z9qhP"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"280": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.617923297678059, 0.7388888888888889],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "jCKlx"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.31111400991390553, 0.30277777777777776],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "xywgq"
+				},
+				{
+					"coords": [0.5448734672580224, 0.30416666666666664],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "range"
+					},
+					"id": "cd46K"
+				},
+				{
+					"coords": [0.8036785807461518, 0.30416666666666664],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "pull"
+					},
+					"id": "ioY1i"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"281": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.5135663970780068, 0.7069444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "NlP2a"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4238194625619619, 0.29583333333333334],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "BTO6X"
+				},
+				{
+					"coords": [0.6909731280980955, 0.29583333333333334],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "push"
+					},
+					"id": "3X1ff"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"282": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.6241847117140621, 0.24861111111111112],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "range"
+					},
+					"id": "KQpX1"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"283": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": true
+		},
+		"top": {
+			"dots": [],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"284": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6304461257500652, 0.6875],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "RZYTM"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.45512653274197756, 0.29444444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "attack-trap"
+					},
+					"id": "DEYMu"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"285": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": true
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4947821549699974, 0.25],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "Y75hL"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"286": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6262718497260631, 0.7694444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "attack"
+					},
+					"id": "pF8Co"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4363422906339682, 0.2375],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "BwAYD"
+				},
+				{
+					"coords": [0.6888859900860944, 0.2375],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "push"
+					},
+					"id": "36RwI"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"287": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6262718497260631, 0.6375],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "DqNFj"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.5511348812940255, 0.25833333333333336],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "attack-trap"
+					},
+					"id": "iWpcD"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"288": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6220975737020611, 0.675],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "aN3RF"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.5448734672580224, 0.275],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "heal"
+					},
+					"id": "S5Uma"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"289": {
+		"bottom": {
+			"dots": [],
+			"isLoss": true,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.6701017479780851, 0.3055555555555556],
+					"enhanceableDetails": {
+						"affectsMultiple": true,
+						"dotShape": "square",
+						"plus1Target": "range"
+					},
+					"id": "KHpPo"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"290": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.668014609966084, 0.2986111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": true,
+						"dotShape": "square",
+						"plus1Target": "range"
+					},
+					"id": "bFRus"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"291": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.5135663970780068, 0.8111111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "kNJUA"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.30276545786590137, 0.29583333333333334],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "JNYvr"
+				},
+				{
+					"coords": [0.5469606052700234, 0.29444444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "range"
+					},
+					"id": "dZftL"
+				},
+				{
+					"coords": [0.7995043047221497, 0.29583333333333334],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "pull"
+					},
+					"id": "C21a1"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"292": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6220975737020611, 0.6972222222222222],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "VZGHW"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"293": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.47808505087398906, 0.30277777777777776],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "attack-trap"
+					},
+					"id": "BYcXi"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"294": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6220975737020611, 0.6722222222222223],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "E9Ndz"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.44051656665797023, 0.25555555555555554],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "gOIBi"
+				},
+				{
+					"coords": [0.6847117140620923, 0.2569444444444444],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "range"
+					},
+					"id": "ENnIx"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"295": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.62001043569006, 0.8736111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "qSppy"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"296": {
+		"bottom": {
+			"dots": [],
+			"isLoss": true,
+			"isPersistent": true
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.5553091573180277, 0.24027777777777778],
+					"enhanceableDetails": {
+						"affectsMultiple": true,
+						"dotShape": "square",
+						"plus1Target": "range"
+					},
+					"id": "29KRa"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"297": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6283589877380642, 0.7069444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "x7nVV"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"298": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.48017218888599006, 0.7208333333333333],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "heal-trap"
+					},
+					"id": "s7Rot"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.329898252021915, 0.3055555555555556],
+					"enhanceableDetails": {
+						"affectsMultiple": true,
+						"dotShape": "square",
+						"plus1Target": "attack"
+					},
+					"id": "k56eH"
+				},
+				{
+					"coords": [0.7848943386381424, 0.3055555555555556],
+					"enhanceableDetails": {
+						"affectsMultiple": true,
+						"dotShape": "square",
+						"plus1Target": "push"
+					},
+					"id": "07NoL"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"299": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6241847117140621, 0.7291666666666666],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "3SHth"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"300": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6241847117140621, 0.6791666666666667],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "GTe5y"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.3465953561179233, 0.2875],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "attack-trap"
+					},
+					"id": "SPwh4"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
 	"301": {
 		"bottom": {
 			"dots": [
@@ -7353,6 +8141,1649 @@
 			"dots": [],
 			"isLoss": true,
 			"isPersistent": true
+		}
+	},
+	"360": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.44051656665797023, 0.7166666666666667],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond-plus",
+						"plus1Target": "heal"
+					},
+					"id": "gVKGi"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"361": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6220975737020611, 0.7125],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "Mnkgv"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"363": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.62001043569006, 0.6611111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "AlHkk"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"366": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.5073049830420037, 0.6166666666666667],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "cvX0f"
+				},
+				{
+					"coords": [0.4426037046699713, 0.6888888888888889],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "TY4nO"
+				},
+				{
+					"coords": [0.49269501695799633, 0.7708333333333334],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond-plus",
+						"plus1Target": "heal"
+					},
+					"id": "Y6eWd"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"367": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6304461257500652, 0.6944444444444444],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "Ilt4Q"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.38625097834594313, 0.2611111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": true,
+						"dotShape": "square",
+						"plus1Target": "attack"
+					},
+					"id": "rqQkX"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": false
+		}
+	},
+	"368": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.6617531959300809, 0.2513888888888889],
+					"enhanceableDetails": {
+						"affectsMultiple": true,
+						"dotShape": "square",
+						"plus1Target": "range"
+					},
+					"id": "IXi60"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"370": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6283589877380642, 0.6680555555555555],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "Lhdfv"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"371": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.4467779806939734, 0.6458333333333334],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "pull"
+					},
+					"id": "kyay1"
+				},
+				{
+					"coords": [0.6805374380380903, 0.6444444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "range"
+					},
+					"id": "WY6h6"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.62001043569006, 0.14722222222222223],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "1TNRv"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"372": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6262718497260631, 0.8083333333333333],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "SXBAN"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"373": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6262718497260631, 0.7291666666666666],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "nABvH"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"374": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4885207409339943, 0.41944444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond-plus"
+					},
+					"id": "mutyO"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"375": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6346204017740673, 0.7125],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "cJMXg"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.6220975737020611, 0.13055555555555556],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "q9f6E"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"376": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.617923297678059, 0.6652777777777777],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "shield"
+					},
+					"id": "skZLl"
+				},
+				{
+					"coords": [0.617923297678059, 0.7875],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "retaliate"
+					},
+					"id": "xPmvN"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"377": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.6220975737020611, 0.24722222222222223],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "J76n2"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"378": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6325332637620663, 0.7069444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "F5gIm"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.6220975737020611, 0.18611111111111112],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "attack"
+					},
+					"id": "NIxqB"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"379": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6220975737020611, 0.6347222222222222],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "9ox2X"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4885207409339943, 0.175],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "heal"
+					},
+					"id": "4UoYr"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"380": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6137490216540569, 0.6736111111111112],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "8hC89"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"381": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6241847117140621, 0.6652777777777777],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "attack"
+					},
+					"id": "Dfjgg"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"382": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.5093921210540047, 0.7041666666666667],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "iTOuz"
+				},
+				{
+					"coords": [0.5031307070180016, 0.8319444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "attack"
+					},
+					"id": "5Jy9n"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.44051656665797023, 0.25833333333333336],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "pv0uA"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"383": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6116618836420559, 0.6236111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "mZ5kx"
+				},
+				{
+					"coords": [0.4885207409339943, 0.825],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "heal"
+					},
+					"id": "LXoHF"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.6283589877380642, 0.3111111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "lTyKA"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": false
+		}
+	},
+	"384": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4342551526219671, 0.19722222222222222],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "0YBc6"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"385": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.62001043569006, 0.6375],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "shield"
+					},
+					"id": "GCFqH"
+				},
+				{
+					"coords": [0.62001043569006, 0.7263888888888889],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "retaliate"
+					},
+					"id": "KTeTt"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.2651969736498826, 0.24444444444444444],
+					"enhanceableDetails": {
+						"affectsMultiple": true,
+						"dotShape": "square",
+						"plus1Target": "attack"
+					},
+					"id": "WbNfD"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"386": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6262718497260631, 0.6597222222222222],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "73xFt"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.27771980172188887, 0.14305555555555555],
+					"enhanceableDetails": {
+						"affectsMultiple": true,
+						"dotShape": "square",
+						"plus1Target": "attack"
+					},
+					"id": "m8qsA"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"387": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6220975737020611, 0.7083333333333334],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "shield"
+					},
+					"id": "7HCIE"
+				},
+				{
+					"coords": [0.62001043569006, 0.8263888888888888],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "retaliate"
+					},
+					"id": "MLjhp"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4655622228019828, 0.19722222222222222],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "OXxxE"
+				},
+				{
+					"coords": [0.6930602661100965, 0.19722222222222222],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-move"
+					},
+					"id": "Rlqcf"
+				},
+				{
+					"coords": [0.4655622228019828, 0.2722222222222222],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-attack"
+					},
+					"id": "UtaMv"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"388": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.4426037046699713, 0.7583333333333333],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "heal"
+					},
+					"id": "ppqiv"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4342551526219671, 0.1875],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "McBND"
+				},
+				{
+					"coords": [0.6596660579180799, 0.1875],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-move"
+					},
+					"id": "VwZgX"
+				},
+				{
+					"coords": [0.6596660579180799, 0.2625],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-range"
+					},
+					"id": "wpoNh"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"389": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6304461257500652, 0.7166666666666667],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "p23Wj"
+				},
+				{
+					"coords": [0.6325332637620663, 0.8291666666666667],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "attack"
+					},
+					"id": "YWuLn"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.46347508478998173, 0.18611111111111112],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "g1CvH"
+				},
+				{
+					"coords": [0.6909731280980955, 0.18472222222222223],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-move"
+					},
+					"id": "YmKcr"
+				},
+				{
+					"coords": [0.46347508478998173, 0.2611111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-attack"
+					},
+					"id": "7wrzl"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"390": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.5135663970780068, 0.7555555555555555],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "5sq3h"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.38625097834594313, 0.19444444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "IOHM2"
+				},
+				{
+					"coords": [0.38625097834594313, 0.2916666666666667],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-attack"
+					},
+					"id": "9QeS9"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"391": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6325332637620663, 0.7611111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "range"
+					},
+					"id": "fMSob"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4947821549699974, 0.1875],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "0wfDk"
+				},
+				{
+					"coords": [0.7995043047221497, 0.2625],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-range"
+					},
+					"id": "cc0Oh"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"392": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.4885207409339943, 0.8263888888888888],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "1X7J4"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.49686929298199844, 0.19166666666666668],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond",
+						"plus1Target": "attack"
+					},
+					"id": "NRkQY"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"394": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6367075397860683, 0.7597222222222222],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "DYqP8"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.49269501695799633, 0.29444444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond-plus",
+						"plus1Target": "heal"
+					},
+					"id": "rBo6y"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"395": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.5740933994260371, 0.23194444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"baseNumHexes": 3,
+						"dotShape": "hex"
+					},
+					"id": "oUSwF"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"396": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.5073049830420037, 0.7916666666666666],
+					"enhanceableDetails": {
+						"affectsMultiple": true,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "CYTgP"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.5594834333420298, 0.2902777777777778],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "target"
+					},
+					"id": "EkhpF"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"397": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6325332637620663, 0.65],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "QHAmS"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4906078789459953, 0.29305555555555557],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond-plus",
+						"plus1Target": "heal"
+					},
+					"id": "bi3A3"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"398": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.42173232454996085, 0.19583333333333333],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "DPHNh"
+				},
+				{
+					"coords": [0.6513175058700756, 0.19444444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-move"
+					},
+					"id": "n79cS"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"400": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6220975737020611, 0.8597222222222223],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "TOP2i"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"401": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6283589877380642, 0.7597222222222222],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "zqgyd"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.46347508478998173, 0.20555555555555555],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "7pJsA"
+				},
+				{
+					"coords": [0.6847117140620923, 0.20555555555555555],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-move"
+					},
+					"id": "oBHHH"
+				},
+				{
+					"coords": [0.6826245760500913, 0.28055555555555556],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-range"
+					},
+					"id": "A1Mh0"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"402": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": true
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"403": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6346204017740673, 0.6833333333333333],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "ENG14"
+				},
+				{
+					"coords": [0.6346204017740673, 0.8583333333333333],
+					"enhanceableDetails": {
+						"affectsMultiple": true,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "rs7A5"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4655622228019828, 0.2],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "Fz4xa"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"405": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6262718497260631, 0.6638888888888889],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "rAsGJ"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4697364988259849, 0.1986111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "5CSwE"
+				},
+				{
+					"coords": [0.6847117140620923, 0.2],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-move"
+					},
+					"id": "kxrvV"
+				},
+				{
+					"coords": [0.46764936081398384, 0.275],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-attack"
+					},
+					"id": "txRQ7"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"406": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6262718497260631, 0.7638888888888888],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "yx7Zk"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"407": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4092094964779546, 0.19583333333333333],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "o7Pdc"
+				},
+				{
+					"coords": [0.4092094964779546, 0.3055555555555556],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-attack"
+					},
+					"id": "KFHsC"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"408": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6304461257500652, 0.6916666666666667],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "ZdJAa"
+				},
+				{
+					"coords": [0.6325332637620663, 0.8541666666666666],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "Heq64"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"409": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6346204017740673, 0.7069444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "NKNyJ"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4363422906339682, 0.1986111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "uRjiy"
+				},
+				{
+					"coords": [0.663840333942082, 0.19722222222222222],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-move"
+					},
+					"id": "Nsa8J"
+				},
+				{
+					"coords": [0.4363422906339682, 0.28888888888888886],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-attack"
+					},
+					"id": "glBJe"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": true
+		}
+	},
+	"410": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.4906078789459953, 0.8847222222222222],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "heal"
+					},
+					"id": "l6ybC"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4885207409339943, 0.2916666666666667],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "diamond-plus",
+						"plus1Target": "heal"
+					},
+					"id": "xBgpy"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"411": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6241847117140621, 0.7611111111111111],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "range"
+					},
+					"id": "ZAs86"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.44469084268197234, 0.18611111111111112],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "8sFrB"
+				},
+				{
+					"coords": [0.6742760240020872, 0.2625],
+					"enhanceableDetails": {
+						"affectsMultiple": true,
+						"dotShape": "square",
+						"plus1Target": "summon-range"
+					},
+					"id": "zbAet"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"413": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6304461257500652, 0.6652777777777777],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "rxAey"
+				},
+				{
+					"coords": [0.6325332637620663, 0.8791666666666667],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "move"
+					},
+					"id": "6w7x6"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.4363422906339682, 0.19583333333333333],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "0ijQj"
+				},
+				{
+					"coords": [0.665927471954083, 0.19444444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-move"
+					},
+					"id": "OEQJV"
+				},
+				{
+					"coords": [0.4363422906339682, 0.2722222222222222],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-attack"
+					},
+					"id": "2oIAO"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"414": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6241847117140621, 0.7708333333333334],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "hP4tq"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.5970519175580485, 0.22083333333333333],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"baseNumHexes": 3,
+						"dotShape": "hex"
+					},
+					"id": "bpo67"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		}
+	},
+	"415": {
+		"bottom": {
+			"dots": [
+				{
+					"coords": [0.6262718497260631, 0.6583333333333333],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "HGY4m"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.45095225671797545, 0.18194444444444444],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-hp"
+					},
+					"id": "DIfCb"
+				},
+				{
+					"coords": [0.6805374380380903, 0.18055555555555555],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-move"
+					},
+					"id": "DqgqR"
+				},
+				{
+					"coords": [0.45095225671797545, 0.25972222222222224],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "summon-attack"
+					},
+					"id": "5Sk6Q"
+				}
+			],
+			"isLoss": true,
+			"isPersistent": true
+		}
+	},
+	"416": {
+		"bottom": {
+			"dots": [],
+			"isLoss": false,
+			"isPersistent": false
+		},
+		"top": {
+			"dots": [
+				{
+					"coords": [0.6304461257500652, 0.13194444444444445],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "attack"
+					},
+					"id": "ox2OU"
+				},
+				{
+					"coords": [0.6325332637620663, 0.2972222222222222],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "square",
+						"plus1Target": "attack"
+					},
+					"id": "mfHsJ"
+				}
+			],
+			"isLoss": false,
+			"isPersistent": false
 		}
 	}
 }
