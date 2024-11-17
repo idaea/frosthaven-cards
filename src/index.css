@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.card-hidden {
+		border: 3px dashed #0006;
+
+		background-color: hsla(from var(--character-color) h s 20% / 0.3);
+
+		> *:not(.card-name) {
+			visibility: hidden;
+		}
+	}
+}
+
 :root {
 	font-family: system-ui, sans-serif;
 	font-weight: 400;

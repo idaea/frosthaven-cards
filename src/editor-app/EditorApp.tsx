@@ -52,7 +52,8 @@ function EditorApp() {
 		<div
 			className="p-8 flex items-center flex-col min-h-screen"
 			style={{
-				backgroundColor: getDesaturatedColour(character.colour),
+				"--character-color": character.colour,
+				backgroundColor: getDesaturatedColour("var(--character-color)"),
 			}}
 		>
 			<TextButton

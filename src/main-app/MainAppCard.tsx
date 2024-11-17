@@ -5,8 +5,6 @@ import { enhancementStickerTypeLookup } from "../common/enhancementStickerTypes"
 import { selectCostCalculator, useMainAppStore } from "./useMainAppStore";
 import { StickerSelector } from "./StickerSelector";
 import type { CardViewModel, DotViewModel } from "./viewModelDatabase";
-import { cardDatabase } from "../card-data";
-import { getCharacterByID } from "../common/characters";
 import { getDotShapeIconSrc } from "../common/getDotShapeIconSrc";
 
 export function MainAppCard({
@@ -67,10 +65,6 @@ function CardDot({
 	const dotIDToSticker = useMainAppStore((state) => state.dotIDToSticker);
 	const calculateDotCost = useMainAppStore(selectCostCalculator);
 
-	const character = getCharacterByID(
-		cardDatabase.lookup.get(dot.cardId)!.character
-	);
-
 	const sticker =
 		dotIDToSticker[dot.id] !== undefined
 			? enhancementStickerTypeLookup[dotIDToSticker[dot.id]]
@@ -92,7 +86,7 @@ function CardDot({
 					sticker
 						? undefined
 						: {
-								color: `hsl(from ${character.colour} calc(h + 180) 100% 70%)`,
+								color: `hsl(from var(--character-color) calc(h + 180) 100% 70%)`,
 								// be brighter on top half since the background is brighter
 								opacity: dot.cardHalf === "top" ? 1 : 0.8,
 								size: 16,
@@ -105,7 +99,7 @@ function CardDot({
 
 			{sticker && (
 				<span
-					className="absolute font-[Gloomhaven] text-yellow-500 pointer-events-none leading-none"
+					className="absolute font-bold font-[Gloomhaven] text-yellow-500 pointer-events-none leading-none"
 					style={{
 						left: `${(3 + x * 100).toFixed(2)}%`,
 						top: `${(3 + y * 100).toFixed(2)}%`,

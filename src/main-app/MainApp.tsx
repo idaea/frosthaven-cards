@@ -53,7 +53,8 @@ function MainApp() {
 		<div
 			className="min-h-screen p-2"
 			style={{
-				backgroundColor: getDesaturatedColour(selectedCharacter.colour),
+				"--character-color": selectedCharacter.colour,
+				backgroundColor: getDesaturatedColour("var(--character-color)"),
 			}}
 			onClick={() => {
 				setSelectedDot(undefined);
