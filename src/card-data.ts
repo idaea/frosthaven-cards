@@ -47,6 +47,7 @@ export interface CardAnnotations {
 	readonly bottom: CardAction;
 }
 
+/** Maps from card ID to annotations */
 export type CardAnnotationsLookup = Record<string, CardAnnotations>;
 
 export interface CardAction {
@@ -86,7 +87,7 @@ export interface Dot {
 
 export type DotShape = "square" | "circle" | "diamond" | "diamond-plus" | "hex";
 
-export const emptyCardAnnotations = {
+export const emptyCardAnnotations: CardAnnotations = {
 	top: {
 		dots: [],
 		isLoss: false,

@@ -255,7 +255,7 @@ export const useEditorStore = createStore<State>()(
 				},
 			},
 
-			cardAnnotationsLookup: bundledCardAnnotations,
+			cardAnnotationsLookup: fillGaps(bundledCardAnnotations),
 
 			setCardAnnotations: (cardId, newDetails) => {
 				set((state) => {
@@ -301,6 +301,20 @@ export const useEditorStore = createStore<State>()(
 		}
 	)
 );
+
+function fillGaps(
+	cardAnnotationsLookup: CardAnnotationsLookup
+): CardAnnotationsLookup {
+	const result = {
+		...cardAnnotationsLookup,
+	};
+	for (const card of cardDatabase.cards) {
+		if (result[card.id] === undefined) {
+			result[card.id] = emptyCardAnnotations;
+		}
+	}
+	return result;
+}
 
 export interface SelectedDot {
 	cardId: string;
