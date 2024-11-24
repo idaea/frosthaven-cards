@@ -4,7 +4,7 @@ import { bundledCardAnnotations } from "../bundledCardAnnotations";
 import type { CardAnnotations, DotShape } from "../card-data";
 import { cardDatabase } from "../card-data";
 import type { CardData } from "../CardData";
-import type { Coords } from "../common/Coords";
+import type { Coords } from "../common/geometry/Coords";
 import type { Plus1Target } from "../common/plus-1-targets";
 import { CardHalfName } from "../common/card-dimensions";
 

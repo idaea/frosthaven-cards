@@ -1,6 +1,6 @@
 import type { IterableElement } from "type-fest";
 
-import type { Coords } from "./Coords";
+import type { Coords } from "./geometry/Coords";
 
 export const cardHalfNames = ["top", "bottom"] as const;
 export type CardHalfName = IterableElement<typeof cardHalfNames>;

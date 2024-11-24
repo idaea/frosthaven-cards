@@ -17,7 +17,7 @@ import {
 	convertCoordsToCardHalf,
 } from "../common/card-dimensions";
 import { bundledCardAnnotations } from "../bundledCardAnnotations";
-import type { Coords } from "../common/Coords";
+import type { Coords } from "../common/geometry/Coords";
 
 const nanoid = customAlphabet(
 	"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",

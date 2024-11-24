@@ -13,7 +13,7 @@ import invariant from "tiny-invariant";
 import { cardDatabase } from "../card-data";
 import { isLeftButtonDepressed } from "../util/isLeftButtonDepressed";
 
-import type { Coords } from "./Coords";
+import type { Coords } from "./geometry/Coords";
 import { cardAspectRatio } from "./card-dimensions";
 
 export function Card({
@@ -25,11 +25,18 @@ export function Card({
 }: {
 	id: string;
 	onClick?: (coords: Coords) => void;
-	onMouseMove?: (coords: Coords, isDrag: boolean) => void;
+	onMouseMove?: (
+		lastCoords: Coords,
+		newCoords: Coords,
+		isDrag: boolean
+	) => void;
 	className?: ClassValue;
 	children: ReactNode;
 }) {
+	const rootRef = useRef<HTMLDivElement | null>(null);
 	const imageRef = useRef<HTMLImageElement | null>(null);
+	const lastMousePosRef = useRef<Coords>();
+	const mouseDownTime = useRef<number | undefined>();
 
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -59,22 +66,48 @@ export function Card({
 		}
 	}, []);
 
-	const handleClick = useCallback(
+	const handleMouseDown = useCallback(
 		(ev: MouseEvent) => {
-			onClick?.(getCoords(ev));
+			if (ev.target === rootRef.current) {
+				mouseDownTime.current = Date.now();
+			} else {
+				mouseDownTime.current = undefined;
+			}
+		},
+		[onClick]
+	);
+
+	const handleMouseUp = useCallback(
+		(ev: MouseEvent) => {
+			if (
+				mouseDownTime.current &&
+				(Date.now() - mouseDownTime.current < 300 ||
+					onMouseMove === undefined)
+			) {
+				onClick?.(lastMousePosRef.current ?? getCoords(ev));
+			}
 		},
 		[onClick]
 	);
 
 	const handleMouseMove = useCallback(
-		(ev: MouseEvent) => {
-			onMouseMove?.(getCoords(ev), isLeftButtonDepressed(ev.buttons));
+		(ev: MouseEvent<HTMLElement>) => {
+			const coords = getCoords(ev);
+			if (lastMousePosRef.current) {
+				onMouseMove?.(
+					lastMousePosRef.current,
+					coords,
+					isLeftButtonDepressed(ev.buttons)
+				);
+			}
+			lastMousePosRef.current = coords;
 		},
 		[onMouseMove]
 	);
 
 	return (
 		<div
+			ref={rootRef}
 			style={{
 				aspectRatio: cardAspectRatio,
 			}}
@@ -85,6 +118,9 @@ export function Card({
 				className,
 				isLoading && "card-hidden",
 			])}
+			onMouseDown={handleMouseDown}
+			onMouseUp={handleMouseUp}
+			onMouseMove={handleMouseMove}
 		>
 			{/* Shows the card name during loading. I think this actually creates more distraction than value. */}
 			{/* {isLoading && (
@@ -95,12 +131,10 @@ export function Card({
 			<img
 				src={card.imgSrc}
 				ref={imageRef}
-				className="w-full h-full"
+				className="w-full h-full pointer-events-none"
 				style={{
 					borderRadius: "inherit",
 				}}
-				onClick={handleClick}
-				onMouseMove={handleMouseMove}
 			/>
 
 			{children}

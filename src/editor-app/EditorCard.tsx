@@ -2,10 +2,15 @@ import type { ClassValue } from "clsx";
 
 import { Highlight } from "../common/Highlight";
 import { Card } from "../common/Card";
-import type { Coords } from "../common/Coords";
+import type { Coords } from "../common/geometry/Coords";
 
 import { selectSelectedDot, useEditorStore } from "./useEditorStore";
 import { getDotShapeIconSrc } from "../common/getDotShapeIconSrc";
+import {
+	coordsAdd,
+	coordsScale,
+	coordsSubtract,
+} from "../common/geometry/coords-utils";
 
 export function EditorCard({
 	id: cardId,
@@ -24,7 +29,7 @@ export function EditorCard({
 		(state) => state.cardAnnotationsLookup[cardId]
 	);
 
-	const handleMouseInput = (coords: Coords) => {
+	const placeDot = (coords: Coords) => {
 		if (selectedDot && selectedDot.cardId === cardId) {
 			store_editSelectedDot({
 				coords,
@@ -39,14 +44,22 @@ export function EditorCard({
 			id={cardId}
 			className={className}
 			onClick={(coords) => {
-				handleMouseInput(coords);
+				placeDot(coords);
 			}}
-			onMouseMove={(coords, isDrag) => {
-				if (!isDrag) {
+			onMouseMove={(lastCoords, newCoords, isDrag) => {
+				if (!isDrag || !selectedDot) {
 					return;
 				}
 
-				handleMouseInput(coords);
+				const dragVector = coordsSubtract(newCoords, lastCoords);
+				const newDotCoords = coordsAdd(
+					selectedDot.dot.coords,
+					coordsScale(dragVector, 0.25)
+				);
+
+				store_editSelectedDot({
+					coords: newDotCoords,
+				});
 			}}
 		>
 			{[
