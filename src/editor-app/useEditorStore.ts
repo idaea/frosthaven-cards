@@ -9,9 +9,6 @@ import { customAlphabet } from "nanoid";
 import type { CardAnnotations, CardAnnotationsLookup, Dot } from "../card-data";
 import { cardDatabase, emptyCardAnnotations } from "../card-data";
 import type { CardData } from "../CardData";
-import { countDown, countUp } from "../util/iterables/range";
-import { filterIter } from "../util/iterables/filterIter";
-import { firstIter } from "../util/iterables/firstIter";
 import {
 	clampCoordsToCardHalf,
 	convertCoordsToCardHalf,
@@ -57,20 +54,14 @@ export const selectCardAnnotations = createSelector(
 		cardAnnotationsLookup[cardId] ?? emptyCardAnnotations
 );
 
+// is a selector for historical reasons, doesn't currently use the State object
 export const selectNearbyCards = createSelector(
-	[
-		(state: State) => state.cardAnnotationsLookup,
-		(_state: State, currentCard: CardData) => currentCard,
-	],
+	[(_state: State, currentCard: CardData) => currentCard],
 	(
-		cardAnnotations,
 		currentCard
 	): {
 		readonly nextCard: CardData | undefined;
-		readonly nextNewCard: CardData | undefined;
-
 		readonly previousCard: CardData | undefined;
-		readonly previousNewCard: CardData | undefined;
 	} => {
 		const undefinedIfOutsideBounds = (x: number): number | undefined => {
 			if (x < 0) {
@@ -88,25 +79,6 @@ export const selectNearbyCards = createSelector(
 		return {
 			nextCard: c(undefinedIfOutsideBounds(currentCard.index + 1)),
 			previousCard: c(undefinedIfOutsideBounds(currentCard.index - 1)),
-
-			nextNewCard: c(
-				firstIter(
-					filterIter(
-						countUp(currentCard.index + 1, cardDatabase.cards.length - 1),
-						(cardIndex) =>
-							!cardAnnotations[cardDatabase.cards[cardIndex].id]
-					)
-				)
-			),
-			previousNewCard: c(
-				firstIter(
-					filterIter(
-						countDown(currentCard.index - 1, 0),
-						(cardIndex) =>
-							!cardAnnotations[cardDatabase.cards[cardIndex].id]
-					)
-				)
-			),
 		};
 	}
 );

@@ -140,8 +140,9 @@ function CardSelector({
 	className?: ClassValue;
 	goToCard: (card: CardData) => void;
 }) {
-	const { nextCard, nextNewCard, previousCard, previousNewCard } =
-		useEditorStore((state) => selectNearbyCards(state, currentCard));
+	const { nextCard, previousCard } = useEditorStore((state) =>
+		selectNearbyCards(state, currentCard)
+	);
 
 	useEffect(() => {
 		const handler = (ev: KeyboardEvent) => {
@@ -162,16 +163,6 @@ function CardSelector({
 		<div className={clsx(className, "flex gap-2", "select-none")}>
 			<ArrowButton
 				arrow="←"
-				disabled={previousNewCard === undefined}
-				onClick={() => {
-					if (previousNewCard !== undefined) {
-						goToCard(previousNewCard);
-					}
-				}}
-				className="font-bold"
-			/>
-			<ArrowButton
-				arrow="←"
 				disabled={previousCard === undefined}
 				onClick={() => {
 					if (previousCard !== undefined) {
@@ -188,16 +179,6 @@ function CardSelector({
 						goToCard(nextCard);
 					}
 				}}
-			/>
-			<ArrowButton
-				arrow="→"
-				disabled={nextNewCard === undefined}
-				onClick={() => {
-					if (nextNewCard !== undefined) {
-						goToCard(nextNewCard);
-					}
-				}}
-				className="font-bold"
 			/>
 		</div>
 	);
