@@ -97,6 +97,8 @@ function CardDot({
 
 	const [x, y] = dot.coords;
 
+	const highlightColor = `hsl(from var(--character-color) calc(h + 180) 100% 70%)`;
+
 	return (
 		<>
 			<Highlight
@@ -106,6 +108,7 @@ function CardDot({
 				image={{
 					src: sticker?.iconSrc ?? getDotShapeIconSrc(dot.dotShape),
 					size: sticker ? (sticker.id === "hex" ? 11.5 : 9) : 6,
+					glowColor: highlightColor,
 				}}
 				highlight={
 					sticker

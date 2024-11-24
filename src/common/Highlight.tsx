@@ -19,6 +19,7 @@ export function Highlight({
 		src: string;
 		opacity?: number;
 		size: number;
+		glowColor?: string;
 	};
 	onClick?: () => void;
 }) {
@@ -66,6 +67,12 @@ export function Highlight({
 						backgroundSize: "contain",
 						backgroundRepeat: "no-repeat",
 						opacity: image.opacity ?? 1,
+
+						...(image.glowColor
+							? {
+									filter: `drop-shadow(0px 0px 5px ${image.glowColor})`,
+								}
+							: undefined),
 
 						...pos(x, y, image.size),
 					}}
