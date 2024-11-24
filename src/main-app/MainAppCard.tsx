@@ -124,7 +124,7 @@ function CardDot({
 
 			{sticker && (
 				<span
-					className="absolute font-bold font-[Gloomhaven] text-yellow-500 pointer-events-none leading-none"
+					className="absolute font-[Gloomhaven] text-yellow-500 pointer-events-none leading-none"
 					style={{
 						left: `${(3 + x * 100).toFixed(2)}%`,
 						top: `${(3 + y * 100).toFixed(2)}%`,
