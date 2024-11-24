@@ -43,8 +43,13 @@ export function Highlight({
 						...commonStyles,
 
 						borderRadius: "9999px",
-						// 70% is so it reaches transparent at the edge of the circle, is ~(root 2) / 2
-						background: `radial-gradient(hsl(from ${highlight.color} h s l / ${highlight.opacity}), transparent 70%)`,
+
+						// if image, full color until 20%, since most of the highlight is hidden behind the image
+						// transparent at 70%, since that's the edge of a circle (calculated with ~(root 2) / 2)
+						background: `radial-gradient(
+							hsl(from ${highlight.color} h s l / ${highlight.opacity}) ${image ? "20%" : 0},
+							transparent 70%
+						)`,
 
 						...pos(x, y, highlight.size),
 					}}
