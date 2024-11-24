@@ -1,38 +1,27 @@
 import invariant from "tiny-invariant";
 
-import type { Plus1Target } from "../plus-1-targets";
 import { isSummonPlus1Target } from "../plus-1-targets";
-import type { StickerTypeID } from "../enhancementStickerTypes";
 import { isElement } from "../enhancementStickerTypes";
 
 import { PricingStrategies } from "./PricingStrategies";
-import type { PricingStrategyType } from "./PricingStrategies";
+import type { CostFactors, EnhancementPermanence } from "./PricingStrategies";
 
-interface CostFactors {
-	stickerType: StickerTypeID;
-	plus1Target: Plus1Target | undefined;
-	priorHexCount: number;
-	isLoss: boolean;
-	isPersistent: boolean;
-	hasMultipleTargets: boolean;
-	levelOfAbilityCard: number;
-	numberOfPreviousEnhancements: number;
-	pricingStrategyType: PricingStrategyType;
-	enhancerLevel: number;
-}
+export function calculateCost(
+	costFactors: CostFactors,
+	enhancementPermanence: EnhancementPermanence
+) {
+	const {
+		stickerType,
+		plus1Target,
+		priorHexCount,
+		isLoss,
+		isPersistent,
+		hasMultipleTargets,
+		levelOfAbilityCard,
+		numberOfPreviousEnhancements,
+		enhancerLevel,
+	} = costFactors;
 
-export function calculateCost({
-	stickerType,
-	plus1Target,
-	priorHexCount,
-	isLoss,
-	isPersistent,
-	hasMultipleTargets,
-	levelOfAbilityCard,
-	numberOfPreviousEnhancements,
-	pricingStrategyType,
-	enhancerLevel,
-}: CostFactors) {
 	function shouldDoubleDueToMultipleTargets() {
 		if (stickerType === "hex") {
 			return false;
@@ -53,7 +42,10 @@ export function calculateCost({
 		return true;
 	}
 
-	const pricingStrategy = PricingStrategies[pricingStrategyType];
+	const pricingStrategy =
+		enhancementPermanence === "temporary"
+			? PricingStrategies.frosthaven_non_permanent
+			: PricingStrategies.frosthaven;
 
 	let cost = 0;
 
@@ -109,13 +101,8 @@ export function calculateCost({
 		enhancerLevel
 	);
 
-	if (enhancerLevel >= 2) {
-		cost -= 10;
-	}
-
-	if (pricingStrategyType === "frosthaven_non_permanent") {
-		cost = Math.ceil(cost * 0.8);
-	}
+	// apply discounts like those for temporary stickers
+	cost = pricingStrategy.applyFinalDiscounts(cost, costFactors);
 
 	return cost;
 }

@@ -6,11 +6,6 @@ import {
 	type PositiveCondition,
 } from "../enhancementStickerTypes";
 
-export type PricingStrategyType =
-	| "frosthaven"
-	| "frosthaven_non_permanent"
-	| "gloomhaven_digital";
-
 export type PricingStrategy = {
 	getCostFromCardLevel(cardLevel: number, enhancerLevel: number): number;
 	getCostFromPriorEnhancements(
@@ -21,6 +16,7 @@ export type PricingStrategy = {
 	baseNewAttackHexCost: number;
 	getPlus1BaseCost(target: Plus1Target): number;
 	getOtherStickerBaseCost(sticker: OtherSticker): number;
+	applyFinalDiscounts(cost: number, costFactors: CostFactors): number;
 };
 
 type OtherSticker = Exclude<StickerTypeID, "plus1" | "hex">;
@@ -111,69 +107,58 @@ const frosthaven: PricingStrategy = {
 			anyElement: 150,
 		},
 	}),
+	applyFinalDiscounts(cost, { enhancerLevel }) {
+		if (enhancerLevel >= 2) {
+			return flatDiscount(cost, 10);
+		}
+
+		return cost;
+	},
 };
 
 const frosthaven_non_permanent: PricingStrategy = {
 	...frosthaven,
-	getCostFromPriorEnhancements(numberOfPriorEnhancements, enhancerLevel) {
-		const vanillaCost = frosthaven.getCostFromPriorEnhancements(
-			numberOfPriorEnhancements,
-			enhancerLevel
-		);
+	applyFinalDiscounts(cost, costFactors) {
+		// Apply the "Temporary Enhancements" rules from the FH rulebook's "Game Variants" section
 
-		return Math.max(0, vanillaCost - 20);
+		// "First, calculate the normal enhancement cost, including any discounts."
+		let discountedCost = frosthaven.applyFinalDiscounts(cost, costFactors);
+
+		// "Next, if the action has at least one previous enhancement, reduce the cost by 20 gold."
+		if (costFactors.numberOfPreviousEnhancements > 0) {
+			discountedCost = flatDiscount(discountedCost, 20);
+		}
+
+		// "Finally, reduce the cost by 20 percent (rounded up)."
+		discountedCost = proportionalDiscount(discountedCost, 0.8);
+
+		return discountedCost;
 	},
 };
 
-const gloomhaven_digital: PricingStrategy = {
-	getCostFromCardLevel(cardLevel) {
-		return (cardLevel - 1) * 10;
-	},
-	getCostFromPriorEnhancements(numberOfPriorEnhancements, _enhancerLevel) {
-		return numberOfPriorEnhancements * 20;
-	},
-	baseNewAttackHexCost: 150,
-	...createStickerBaseCostLookup({
-		// values from https://i.imgur.com/nEsIUvG.png
-		// recommended by FH dev here: https://www.reddit.com/r/Gloomhaven/comments/uo3som/comment/i8cej68/
-		plus1: {
-			move: 20,
-			attack: 35,
-			range: 20,
-			target: 40,
-			shield: 60,
-			retaliate: 40,
-			pierce: 15,
-			heal: 20,
-			push: 20,
-			pull: 15,
-			teleport: 50,
+function flatDiscount(cost: number, discountAmount: number): number {
+	return Math.max(0, cost - discountAmount);
+}
 
-			"summon-hp": 30,
-			"summon-move": 40,
-			"summon-attack": 60,
-			"summon-range": 40,
-		},
-
-		other: {
-			regenerate: 40,
-			ward: 40,
-			strengthen: 100,
-			bless: 50,
-			wound: 45,
-			poison: 30,
-			immobilize: 100,
-			muddle: 25,
-			curse: 100,
-			specificElement: 60,
-			anyElement: 90,
-			jump: 35,
-		},
-	}),
-};
+function proportionalDiscount(cost: number, scale: number): number {
+	return Math.ceil(cost * scale);
+}
 
 export const PricingStrategies = {
 	frosthaven,
 	frosthaven_non_permanent,
-	gloomhaven_digital,
-} satisfies Record<PricingStrategyType, PricingStrategy>;
+};
+
+export interface CostFactors {
+	stickerType: StickerTypeID;
+	plus1Target: Plus1Target | undefined;
+	priorHexCount: number;
+	isLoss: boolean;
+	isPersistent: boolean;
+	hasMultipleTargets: boolean;
+	levelOfAbilityCard: number;
+	numberOfPreviousEnhancements: number;
+	enhancerLevel: number;
+}
+
+export type EnhancementPermanence = "permanent" | "temporary";

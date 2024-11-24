@@ -8,10 +8,9 @@ import type { StickerTypeID } from "../common/enhancementStickerTypes";
 import { calculateCost } from "../common/calculator/calculateCost";
 
 import type { DotViewModel } from "./viewModelDatabase";
+import { EnhancementPermanence } from "../common/calculator/PricingStrategies";
 
 type EnhancerLevel = 1 | 2 | 3 | 4;
-type EnhancementPermanence = "permanent" | "temporary";
-
 export interface State {
 	unlockedCharacters: Partial<Record<CharacterID, boolean>>;
 	unlockCharacter: (character: Character) => void;
@@ -106,21 +105,19 @@ export const selectCostCalculator = createSelector(
 		dot
 	) => {
 		return (sticker: StickerTypeID) =>
-			calculateCost({
-				enhancerLevel: enhancerLevel,
-				pricingStrategyType:
-					enhancementPermanence === "temporary"
-						? "frosthaven_non_permanent"
-						: "frosthaven",
-
-				hasMultipleTargets: dot.affectsMultiple,
-				isLoss: dot.isOnLossAction,
-				isPersistent: dot.isOnPersistentAction,
-				levelOfAbilityCard: dot.cardLevel,
-				plus1Target: dot.plus1Target,
-				numberOfPreviousEnhancements: numberOfStickersOnSameAction,
-				priorHexCount: dot.baseNumHexes ?? 0,
-				stickerType: sticker,
-			});
+			calculateCost(
+				{
+					enhancerLevel: enhancerLevel,
+					hasMultipleTargets: dot.affectsMultiple,
+					isLoss: dot.isOnLossAction,
+					isPersistent: dot.isOnPersistentAction,
+					levelOfAbilityCard: dot.cardLevel,
+					plus1Target: dot.plus1Target,
+					numberOfPreviousEnhancements: numberOfStickersOnSameAction,
+					priorHexCount: dot.baseNumHexes ?? 0,
+					stickerType: sticker,
+				},
+				enhancementPermanence
+			);
 	}
 );
