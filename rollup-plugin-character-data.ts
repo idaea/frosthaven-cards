@@ -63,7 +63,7 @@ export default function rollupPlugin(): Plugin {
 							x["character-xws"] === "deminate"
 								? "geminate"
 								: x["character-xws"],
-						name: x.name,
+						name: formatName(x.name),
 						level: x.level,
 						cardNumber: parseInt(x.cardno, 10),
 					}))
@@ -84,4 +84,58 @@ export default function rollupPlugin(): Plugin {
 			].join("\n");
 		},
 	};
+}
+
+const uncapitalizedWords = [
+	"a",
+	"an",
+	"and",
+	"as",
+	"at",
+	"but",
+	"by",
+	"down",
+	"for",
+	"from",
+	"if",
+	"in",
+	"into",
+	"like",
+	"near",
+	"nor",
+	"of",
+	"off ",
+	"on",
+	"once",
+	"onto",
+	"or",
+	"over",
+	"past",
+	"so",
+	"than",
+	"that",
+	"the",
+	"to",
+	"upon",
+	"when",
+	"with",
+	"yet",
+];
+const regex_word = /\b[\w\d']+\b/g;
+const regex_uncapitalizedWords = new RegExp(
+	`^(${uncapitalizedWords.join("|")})$`,
+	"i"
+);
+
+function formatName(name: string): string {
+	return name.replaceAll(regex_word, (word, offset) => {
+		const isFirst = offset === 0;
+		const isLast = offset + word.length === name.length;
+
+		if (regex_uncapitalizedWords.test(word) && !isFirst && !isLast) {
+			return word;
+		} else {
+			return word[0].toUpperCase() + word.substring(1);
+		}
+	});
 }
