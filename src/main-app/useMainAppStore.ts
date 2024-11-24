@@ -69,13 +69,43 @@ export const useMainAppStore = createStore<State>()(
 	)
 );
 
+const selectNumberOfStickersOnRelatedDots = createSelector(
+	[
+		(state: State) => state.dotIDToSticker,
+		(_state: State, dot: DotViewModel) => dot,
+	],
+	(dotIDToSticker, dot): number => {
+		const thisDotHasSticker = dotIDToSticker[dot.id];
+
+		console.log(dot.id, dot.otherDotsOnSameAction);
+
+		if (!thisDotHasSticker) {
+			return dot.otherDotsOnSameAction.filter(
+				(dotID) => dotIDToSticker[dotID]
+			).length;
+		} else {
+			return dot.otherDotsOnSameAction.filter(
+				(dotID) => dotID < dot.id && dotIDToSticker[dotID] !== undefined
+			).length;
+		}
+	}
+);
+
 export const selectCostCalculator = createSelector(
 	[
 		(state: State) => state.enhancementPermanence,
 		(state: State) => state.enhancerLevel,
+		(state: State, dot: DotViewModel) =>
+			selectNumberOfStickersOnRelatedDots(state, dot),
+		(_state: State, dot: DotViewModel) => dot,
 	],
-	(enhancementPermanence, enhancerLevel) => {
-		return (dot: DotViewModel, sticker: StickerTypeID) =>
+	(
+		enhancementPermanence,
+		enhancerLevel,
+		numberOfStickersOnSameAction,
+		dot
+	) => {
+		return (sticker: StickerTypeID) =>
 			calculateCost({
 				enhancerLevel: enhancerLevel,
 				pricingStrategyType:
@@ -88,7 +118,7 @@ export const selectCostCalculator = createSelector(
 				isPersistent: dot.isOnPersistentAction,
 				levelOfAbilityCard: dot.cardLevel,
 				plus1Target: dot.plus1Target,
-				numberOfPreviousEnhancements: 0,
+				numberOfPreviousEnhancements: numberOfStickersOnSameAction,
 				priorHexCount: dot.baseNumHexes ?? 0,
 				stickerType: sticker,
 			});

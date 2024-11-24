@@ -27,7 +27,9 @@ export function StickerSelector({
 	onRemoveSticker?: () => void;
 	onClose?: () => void;
 }) {
-	const calculateDotCost = useMainAppStore(selectCostCalculator);
+	const calculateDotCost = useMainAppStore((state) =>
+		selectCostCalculator(state, dot)
+	);
 	const selectedSticker = useMainAppStore((state) =>
 		dot ? state.dotIDToSticker[dot.id] : undefined
 	);
@@ -74,7 +76,7 @@ export function StickerSelector({
 							}
 						}}
 					/>
-					<span>{calculateDotCost(dot, sticker.id)}</span>
+					<span>{calculateDotCost(sticker.id)}</span>
 				</div>
 			))}
 

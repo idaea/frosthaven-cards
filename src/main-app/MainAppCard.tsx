@@ -86,7 +86,9 @@ function CardDot({
 	onClick?: () => void;
 }) {
 	const dotIDToSticker = useMainAppStore((state) => state.dotIDToSticker);
-	const calculateDotCost = useMainAppStore(selectCostCalculator);
+	const calculateDotCost = useMainAppStore((state) =>
+		selectCostCalculator(state, dot)
+	);
 
 	const sticker =
 		dotIDToSticker[dot.id] !== undefined
@@ -129,7 +131,7 @@ function CardDot({
 						textShadow: "2px 2px black",
 					}}
 				>
-					{calculateDotCost(dot, sticker.id)}
+					{calculateDotCost(sticker.id)}
 				</span>
 			)}
 		</>
