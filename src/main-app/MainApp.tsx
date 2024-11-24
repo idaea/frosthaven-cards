@@ -123,7 +123,28 @@ function MainApp() {
 				/>
 			</div>
 
-			{!selectedCharacterIsLocked ? (
+			{selectedCharacter.isUnsupported ? (
+				<div className="mx-auto max-w-screen-sm text-center mt-12">
+					<p className="text-xl">
+						Sorry, my group hasn't unlocked this character. I can't enter
+						its data without seeing spoilers, so it's not supported in
+						this app yet.
+					</p>
+					<p className="text-xl mt-2">Please check back later!</p>
+				</div>
+			) : selectedCharacterIsLocked ? (
+				<div className="mx-auto max-w-screen-sm text-center mt-12">
+					<p className="text-xl">This character is locked by default</p>
+					<TextButton
+						className="bg-white mt-2"
+						onClick={() => {
+							unlockCharacter(selectedCharacter);
+						}}
+					>
+						Unlock character
+					</TextButton>
+				</div>
+			) : (
 				<div
 					className="grid gap-2"
 					style={{
@@ -142,18 +163,6 @@ function MainApp() {
 								}}
 							/>
 						))}
-				</div>
-			) : (
-				<div className="flex flex-col items-center mt-12 gap-2">
-					<p className="text-xl">This character is locked</p>
-					<TextButton
-						className="bg-white"
-						onClick={() => {
-							unlockCharacter(selectedCharacter);
-						}}
-					>
-						Unlock character
-					</TextButton>
 				</div>
 			)}
 		</div>
