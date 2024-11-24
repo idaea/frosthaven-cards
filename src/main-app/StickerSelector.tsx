@@ -8,16 +8,21 @@ import deleteSvgIcon from "../images/delete.svg";
 import { getValidStickersForDot } from "./getValidStickersForDot";
 import { selectCostCalculator, useMainAppStore } from "./useMainAppStore";
 import type { DotViewModel } from "./viewModelDatabase";
+import { CSSProperties } from "react";
+
+const MAX_COLS = 4;
 
 export function StickerSelector({
 	dot,
 	className,
+	style,
 	onAddSticker,
 	onRemoveSticker,
 	onClose,
 }: {
 	dot: DotViewModel;
 	className?: ClassValue;
+	style?: CSSProperties;
 	onAddSticker?: (sticker: StickerTypeID) => void;
 	onRemoveSticker?: () => void;
 	onClose?: () => void;
@@ -30,7 +35,7 @@ export function StickerSelector({
 	const validStickers = getValidStickersForDot(dot);
 	const gridColumns = Math.min(
 		validStickers.length + (selectedSticker ? 1 : 0),
-		4
+		MAX_COLS
 	);
 
 	return (
@@ -47,6 +52,7 @@ export function StickerSelector({
 				"select-none",
 				className
 			)}
+			style={style}
 			onClick={(ev) => {
 				ev.stopPropagation();
 			}}

@@ -6,6 +6,8 @@ import { selectCostCalculator, useMainAppStore } from "./useMainAppStore";
 import { StickerSelector } from "./StickerSelector";
 import type { CardViewModel, DotViewModel } from "./viewModelDatabase";
 import { getDotShapeIconSrc } from "../common/getDotShapeIconSrc";
+import { CSSProperties } from "react";
+import { Coords } from "../common/geometry/Coords";
 
 export function MainAppCard({
 	card,
@@ -33,9 +35,10 @@ export function MainAppCard({
 				);
 			})}
 			{selectedDot && selectedDot.cardId === card.id && (
-				<div className="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center">
+				<div className="absolute top-0 right-0 bottom-0 left-0">
 					<StickerSelector
 						className="absolute"
+						style={attachToDot(selectedDot.coords)}
 						dot={selectedDot}
 						onAddSticker={(sticker) => {
 							addSticker(selectedDot.id, sticker);
@@ -53,6 +56,26 @@ export function MainAppCard({
 			)}
 		</Card>
 	);
+}
+
+function attachToDot(coords: Coords): CSSProperties {
+	const pct = (x: number) => `${x * 100}%`;
+	const dim = (
+		coord: number,
+		low: keyof CSSProperties,
+		high: keyof CSSProperties
+	) => {
+		if (coord > 0.5) {
+			return { [high]: pct(1 - coord) };
+		} else {
+			return { [low]: pct(coord) };
+		}
+	};
+
+	return {
+		...dim(coords[0], "left", "right"),
+		...dim(coords[1], "top", "bottom"),
+	};
 }
 
 function CardDot({
