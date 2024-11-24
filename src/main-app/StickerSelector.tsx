@@ -9,7 +9,6 @@ import { getValidStickersForDot } from "./getValidStickersForDot";
 import { selectCostCalculator, useMainAppStore } from "./useMainAppStore";
 import type { DotViewModel } from "./viewModelDatabase";
 
-
 export function StickerSelector({
 	dot,
 	className,
@@ -29,7 +28,10 @@ export function StickerSelector({
 	);
 
 	const validStickers = getValidStickersForDot(dot);
-	const gridColumns = Math.min(validStickers.length + 1, 4);
+	const gridColumns = Math.min(
+		validStickers.length + (selectedSticker ? 1 : 0),
+		4
+	);
 
 	return (
 		<div
@@ -70,15 +72,17 @@ export function StickerSelector({
 				</div>
 			))}
 
-			<div className="flex flex-col gap-1 items-center leading-none">
-				<IconButton
-					src={deleteSvgIcon}
-					size="sm"
-					onClick={() => {
-						onRemoveSticker?.();
-					}}
-				/>
-			</div>
+			{selectedSticker && (
+				<div className="flex flex-col gap-1 items-center leading-none">
+					<IconButton
+						src={deleteSvgIcon}
+						size="sm"
+						onClick={() => {
+							onRemoveSticker?.();
+						}}
+					/>
+				</div>
+			)}
 		</div>
 	);
 }
