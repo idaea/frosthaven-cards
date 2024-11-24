@@ -2,6 +2,7 @@ import { useId, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import {
+	Character,
 	characters,
 	getCharacterByShortID,
 	parseShortCharacterID,
@@ -42,9 +43,12 @@ function MainApp() {
 	const selectedCharacter = getCharacterByShortID(
 		parseShortCharacterID(routeParams["characterId"]) ?? characters[0].shortId
 	);
-	const selectedCharacterIsLocked =
-		selectedCharacter.isAlwaysUnlocked !== true &&
-		unlockedCharacters[selectedCharacter.id] !== true;
+
+	const isCharacterLocked = (character: Character) =>
+		character.isAlwaysUnlocked !== true &&
+		unlockedCharacters[character.id] !== true;
+
+	const selectedCharacterIsLocked = isCharacterLocked(selectedCharacter);
 
 	const elementID_temporaryStickers = useId();
 	const elementID_enhancerLevel = useId();
@@ -115,6 +119,7 @@ function MainApp() {
 							pathname: `/c/${c.shortId}`,
 						});
 					}}
+					isCharacterLocked={isCharacterLocked}
 				/>
 			</div>
 

@@ -7,10 +7,12 @@ import { useMainAppStore } from "./useMainAppStore";
 export function CharacterSelector({
 	selectedCharacter,
 	onSelectCharacter,
+	isCharacterLocked,
 	className,
 }: {
 	selectedCharacter: Character;
 	onSelectCharacter?: (character: Character) => void;
+	isCharacterLocked?: (character: Character) => boolean;
 	className?: ClassValue;
 }) {
 	const unlockedCharacters = useMainAppStore(
@@ -21,8 +23,7 @@ export function CharacterSelector({
 		return characters
 			.map((c) => ({
 				...c,
-				isLocked:
-					c.isAlwaysUnlocked !== true && unlockedCharacters[c.id] !== true,
+				isLocked: isCharacterLocked?.(c) ?? false,
 				isSelected: c.id === selectedCharacter.id,
 			}))
 			.sort((a, b) => {

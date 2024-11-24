@@ -19,6 +19,7 @@ import {
 	selectCardAnnotations,
 } from "./useEditorStore";
 import { EditorCard } from "./EditorCard";
+import { CharacterSelector } from "../main-app/CharacterSelector";
 
 export const HIGHLIGHT_SIZE = 24;
 
@@ -26,6 +27,13 @@ export { EditorApp as Component };
 
 function EditorApp() {
 	const routeParams = useParams();
+	const navigate = useNavigate();
+
+	const goToCard = (card: CardData) => {
+		navigate({
+			pathname: `/editor/${card.id}`,
+		});
+	};
 
 	const currentCard =
 		(routeParams["cardId"]
@@ -68,7 +76,23 @@ function EditorApp() {
 				Export
 			</TextButton>
 
-			<CardSelector className="mb-2" currentCard={currentCard} />
+			<CharacterSelector
+				selectedCharacter={character}
+				onSelectCharacter={(newCharacter) => {
+					const firstCard = cardDatabase.cards.find(
+						(c) => c.character === newCharacter.id
+					);
+					if (firstCard) {
+						goToCard(firstCard);
+					}
+				}}
+			/>
+
+			<CardSelector
+				className="mb-2"
+				currentCard={currentCard}
+				goToCard={goToCard}
+			/>
 
 			<div className="flex w-full h-[480px] md:h-[600px] lg:h-[720px]">
 				{hasSelectedDot ? (
@@ -77,7 +101,12 @@ function EditorApp() {
 					<div className="flex-1 min-w-0 p-4" />
 				)}
 
-				<EditorCard id={currentCard.id} className={["h-full", "flex-0"]} />
+				<EditorCard
+					id={currentCard.id}
+					className={["h-full", "flex-0"]}
+					// use key because if the component instance is reused then tracking image loading gets more complex
+					key={currentCard.id}
+				/>
 
 				<div className="flex-1 min-w-0 relative p-4">
 					<CardHalfEditor
@@ -105,19 +134,14 @@ function EditorApp() {
 function CardSelector({
 	currentCard,
 	className,
+	goToCard,
 }: {
 	currentCard: CardData;
 	className?: ClassValue;
+	goToCard: (card: CardData) => void;
 }) {
-	const navigate = useNavigate();
-
 	const { nextCard, nextNewCard, previousCard, previousNewCard } =
 		useEditorStore((state) => selectNearbyCards(state, currentCard));
-	const goToCard = (card: CardData) => {
-		navigate({
-			pathname: `/editor/${card.id}`,
-		});
-	};
 
 	useEffect(() => {
 		const handler = (ev: KeyboardEvent) => {
