@@ -51,7 +51,7 @@ function MainApp() {
 
 	return (
 		<div
-			className="p-3 min-h-screen"
+			className="min-h-screen p-2"
 			style={{
 				backgroundColor: getDesaturatedColour(selectedCharacter.colour),
 			}}
@@ -59,7 +59,7 @@ function MainApp() {
 				setSelectedDot(undefined);
 			}}
 		>
-			<div className="flex justify-between gap-8 mb-2">
+			<div className="flex justify-between gap-8 mb-2 px-1">
 				<div className="flex flex-col flex-0 gap-1 md:pl-1 font-[Gloomhaven]">
 					<div className="whitespace-nowrap">
 						<input
@@ -118,7 +118,12 @@ function MainApp() {
 			</div>
 
 			{!selectedCharacterIsLocked ? (
-				<div className="grid gap-2 lg:gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+				<div
+					className="grid gap-2"
+					style={{
+						gridTemplateColumns: "repeat(auto-fit, minmax(235px, 1fr))",
+					}}
+				>
 					{viewModelDatabase.cards
 						.filter((x) => x.character === selectedCharacter.id)
 						.map((card) => (
