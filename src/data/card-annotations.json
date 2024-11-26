@@ -1712,7 +1712,7 @@
 					"coords": [0.7970062736177863, 0.1625],
 					"enhanceableDetails": {
 						"affectsMultiple": false,
-						"baseNumHexes": 3,
+						"baseNumHexes": 2,
 						"dotShape": "hex"
 					},
 					"id": "OumH2"
