@@ -32,7 +32,7 @@ const router = createHashRouter([
 	},
 	{
 		index: true,
-		element: <Navigate to="/c" />,
+		element: <Navigate to="/c" replace />,
 	},
 ]);
 
