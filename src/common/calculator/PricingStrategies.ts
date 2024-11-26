@@ -153,8 +153,9 @@ export interface CostFactors {
 	stickerType: StickerTypeID;
 	plus1Target: Plus1Target | undefined;
 	priorHexCount: number;
-	isLoss: boolean;
-	isPersistent: boolean;
+	isOnLossAction: boolean;
+	cardHasPersistentIcon: boolean;
+	abilityGrantsPersistentBonus: boolean;
 	hasMultipleTargets: boolean;
 	levelOfAbilityCard: number;
 	numberOfPreviousEnhancements: number;

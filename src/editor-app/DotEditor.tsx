@@ -19,6 +19,7 @@ import { enhancementStickerTypeLookup as s } from "../common/enhancementStickerT
 
 import { selectSelectedDot, useEditorStore } from "./useEditorStore";
 import { getDotShapeIconSrc } from "../common/getDotShapeIconSrc";
+import { useId } from "react";
 
 const moveIcon = getPlus1ImgSrc("move");
 const attackIcon = getPlus1ImgSrc("attack");
@@ -111,11 +112,10 @@ function EnhanceableSelector() {
 
 	invariant(!!selectedDot);
 
-	const selectedEnhanceType = selectedDot.dot.enhanceableDetails.plus1Target;
-	const affectsMultiple = selectedDot.dot.enhanceableDetails.affectsMultiple;
-	const baseNumHexes = selectedDot.dot.enhanceableDetails.baseNumHexes;
+	const { plus1Target, affectsMultiple, baseNumHexes, isPersistent } =
+		selectedDot.dot.enhanceableDetails;
 
-	const canShowAffectsMultiple = canAffectMultiple(selectedEnhanceType);
+	const canShowAffectsMultiple = canAffectMultiple(plus1Target);
 
 	const typesOfPlayerPlusOne = [
 		["move", moveIcon],
@@ -142,6 +142,8 @@ function EnhanceableSelector() {
 	] as Array<[SummonPlus1Target, string]>;
 
 	const priorEnhanceableDetails = selectedDot.dot.enhanceableDetails;
+
+	const id_abilityIsPersistent = useId();
 
 	return (
 		<div>
@@ -170,7 +172,6 @@ function EnhanceableSelector() {
 					} else {
 						editSelectedDot({
 							enhanceableDetails: {
-								...priorEnhanceableDetails,
 								dotShape,
 							},
 						});
@@ -194,7 +195,7 @@ function EnhanceableSelector() {
 									enhanceableDetails: {
 										dotShape: "hex",
 										plus1Target: undefined,
-										affectsMultiple: false,
+										affectsMultiple: true,
 										baseNumHexes: newValue,
 									},
 								});
@@ -215,13 +216,9 @@ function EnhanceableSelector() {
 										onChange: (e) => {
 											editSelectedDot({
 												enhanceableDetails: {
-													dotShape:
-														priorEnhanceableDetails.dotShape,
-													plus1Target: selectedEnhanceType,
 													affectsMultiple: (
 														e.target as HTMLInputElement
 													).checked,
-													baseNumHexes: undefined,
 												},
 											});
 										},
@@ -238,11 +235,31 @@ function EnhanceableSelector() {
 						</label>
 					</div>
 
+					<div>
+						<input
+							type="checkbox"
+							checked={isPersistent}
+							onChange={(e) => {
+								editSelectedDot({
+									enhanceableDetails: {
+										isPersistent: (e.target as HTMLInputElement)
+											.checked,
+									},
+								});
+							}}
+							id={id_abilityIsPersistent}
+							className="mr-1"
+						/>
+						<label htmlFor={id_abilityIsPersistent}>
+							Has persistent bonus?
+						</label>
+					</div>
+
 					<h2 className="font-bold mt-1">Non-numeric</h2>
 					<IconButton
 						src={strengthenIcon}
 						subIconSrc={poisonIcon}
-						selected={selectedEnhanceType === undefined}
+						selected={plus1Target === undefined}
 						disabled={priorEnhanceableDetails.dotShape === "square"}
 						onClick={() => {
 							editSelectedDot({
@@ -266,7 +283,7 @@ function EnhanceableSelector() {
 									key={enhanceType}
 									src={iconSrc}
 									subIconSrc={subIconSrc}
-									selected={enhanceType === selectedEnhanceType}
+									selected={enhanceType === plus1Target}
 									onClick={() => {
 										editSelectedDot({
 											enhanceableDetails: canAffectMultiple(
@@ -300,7 +317,7 @@ function EnhanceableSelector() {
 						{typesOfSummonPlusOne.map(([enhanceType, iconSrc]) => (
 							<IconButton
 								src={iconSrc}
-								selected={enhanceType === selectedEnhanceType}
+								selected={enhanceType === plus1Target}
 								onClick={() => {
 									editSelectedDot({
 										enhanceableDetails: canAffectMultiple(enhanceType)

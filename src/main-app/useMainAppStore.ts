@@ -76,8 +76,6 @@ const selectNumberOfStickersOnRelatedDots = createSelector(
 	(dotIDToSticker, dot): number => {
 		const thisDotHasSticker = dotIDToSticker[dot.id];
 
-		console.log(dot.id, dot.otherDotsOnSameAction);
-
 		if (!thisDotHasSticker) {
 			return dot.otherDotsOnSameAction.filter(
 				(dotID) => dotIDToSticker[dotID]
@@ -109,8 +107,9 @@ export const selectCostCalculator = createSelector(
 				{
 					enhancerLevel: enhancerLevel,
 					hasMultipleTargets: dot.affectsMultiple,
-					isLoss: dot.isOnLossAction,
-					isPersistent: dot.isOnPersistentAction,
+					isOnLossAction: dot.isOnLossAction,
+					cardHasPersistentIcon: dot.cardHasPersistentIcon,
+					abilityGrantsPersistentBonus: dot.isOnPersistentAbility,
 					levelOfAbilityCard: dot.cardLevel,
 					plus1Target: dot.plus1Target,
 					numberOfPreviousEnhancements: numberOfStickersOnSameAction,

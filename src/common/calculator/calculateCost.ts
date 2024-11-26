@@ -14,8 +14,9 @@ export function calculateCost(
 		stickerType,
 		plus1Target,
 		priorHexCount,
-		isLoss,
-		isPersistent,
+		isOnLossAction: isOnLossAction,
+		abilityGrantsPersistentBonus,
+		cardHasPersistentIcon,
 		hasMultipleTargets,
 		levelOfAbilityCard,
 		numberOfPreviousEnhancements,
@@ -70,7 +71,7 @@ export function calculateCost(
 	}
 
 	// 2: "If the action has a lost icon, but no persistent icon, halve the cost"
-	if (isLoss && !isPersistent) {
+	if (isOnLossAction && !cardHasPersistentIcon) {
 		cost /= 2;
 	}
 
@@ -79,7 +80,7 @@ export function calculateCost(
 		   icon, triple the cost. This does not apply to summon stat enhancements."
 	*/
 	if (
-		isPersistent &&
+		abilityGrantsPersistentBonus &&
 		!(
 			stickerType === "plus1" &&
 			!!plus1Target &&

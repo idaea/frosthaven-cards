@@ -246,10 +246,10 @@ function CardHalfEditor({
 			<div>
 				<input
 					type="checkbox"
-					checked={cardAction.isPersistent}
+					checked={cardAction.hasPersistentIcon}
 					onChange={() => {
 						onChange?.({
-							isPersistent: !cardAction.isPersistent,
+							hasPersistentIcon: !cardAction.hasPersistentIcon,
 						});
 					}}
 					id={id_isPersistent}

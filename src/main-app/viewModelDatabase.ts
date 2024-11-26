@@ -70,7 +70,8 @@ function getDotsFromAction(
 		cardHalf,
 		otherDotsOnSameAction: allDotsOnAction.filter((x) => x !== dot.id),
 		isOnLossAction: cardAction.isLoss,
-		isOnPersistentAction: cardAction.isPersistent,
+		isOnPersistentAbility: dot.enhanceableDetails.isPersistent,
+		cardHasPersistentIcon: cardAction.hasPersistentIcon,
 		coords: dot.coords,
 		dotShape: dot.enhanceableDetails.dotShape,
 		baseNumHexes: dot.enhanceableDetails.baseNumHexes,
@@ -96,7 +97,8 @@ export interface DotViewModel {
 	readonly cardHalf: CardHalfName;
 	readonly otherDotsOnSameAction: string[];
 	readonly isOnLossAction: boolean;
-	readonly isOnPersistentAction: boolean;
+	readonly cardHasPersistentIcon: boolean;
+	readonly isOnPersistentAbility: boolean;
 	readonly coords: Coords;
 	readonly dotShape: DotShape;
 	readonly baseNumHexes: number | undefined;

@@ -3,12 +3,10 @@ import type { CardFromData } from "character-data";
 
 import type { CardData } from "./CardData";
 import { mapBy } from "./util/keyBy";
-import type {
-	Plus1Target,
-	MultiAffectingPlus1Target,
-} from "./common/plus-1-targets";
+import { type Plus1Target, canAffectMultiple } from "./common/plus-1-targets";
 import { parseLongCharacterID } from "./common/characters";
 import { throwError } from "./util/throwError";
+import invariant from "tiny-invariant";
 
 export interface CardDatabase {
 	// this type is pretty denormalised
@@ -53,31 +51,16 @@ export type CardAnnotationsLookup = Record<string, CardAnnotations>;
 export interface CardAction {
 	readonly dots: Dot[];
 	readonly isLoss: boolean;
-	readonly isPersistent: boolean;
+	readonly hasPersistentIcon: boolean;
 }
 
-type EnhanceableDetails =
-	| {
-			readonly dotShape: "hex";
-			readonly baseNumHexes: number;
-
-			readonly plus1Target: undefined;
-			readonly affectsMultiple: false;
-	  }
-	| {
-			readonly dotShape: Exclude<DotShape, "hex">;
-			readonly plus1Target: undefined | MultiAffectingPlus1Target;
-			readonly affectsMultiple: boolean;
-
-			readonly baseNumHexes: undefined;
-	  }
-	| {
-			readonly dotShape: Exclude<DotShape, "hex">;
-			readonly plus1Target: Exclude<Plus1Target, MultiAffectingPlus1Target>;
-			readonly affectsMultiple: false;
-
-			readonly baseNumHexes: undefined;
-	  };
+interface EnhanceableDetails {
+	readonly dotShape: DotShape;
+	readonly baseNumHexes: number | undefined;
+	readonly isPersistent: boolean;
+	readonly plus1Target: Plus1Target;
+	readonly affectsMultiple: boolean;
+}
 
 export interface Dot {
 	readonly id: string;
@@ -91,11 +74,66 @@ export const emptyCardAnnotations: CardAnnotations = {
 	top: {
 		dots: [],
 		isLoss: false,
-		isPersistent: false,
+		hasPersistentIcon: false,
 	},
 	bottom: {
 		dots: [],
 		isLoss: false,
-		isPersistent: false,
+		hasPersistentIcon: false,
 	},
 };
+
+export function validateCardAnnotations(
+	cardAnnotations: CardAnnotations
+): void {
+	validateCardHalf(cardAnnotations.top);
+	validateCardHalf(cardAnnotations.bottom);
+}
+
+function validateCardHalf(action: CardAction): void {
+	invariant(typeof action.isLoss === "boolean", "isLoss must be boolean");
+	invariant(
+		typeof action.hasPersistentIcon === "boolean",
+		"hasPersistentIcon must be boolean"
+	);
+	action.dots.every(validateDot);
+}
+
+function validateDot(dot: Dot): void {
+	invariant(Array.isArray(dot.coords), "coords must be array");
+
+	invariant(
+		dot.coords.length === 2 && dot.coords.every((c) => typeof c === "number"),
+		"coords must be numbers"
+	);
+
+	invariant(typeof dot.id === "string", "Dot ID must be a string");
+
+	validateEnhanceable(dot.enhanceableDetails);
+}
+
+function validateEnhanceable({
+	dotShape,
+	baseNumHexes,
+	isPersistent,
+	plus1Target,
+	affectsMultiple,
+}: EnhanceableDetails): void {
+	invariant(typeof isPersistent === "boolean", "isPersistent must be boolean");
+
+	if (dotShape === "hex") {
+		invariant(plus1Target === undefined, "no targets for hex enhanceable");
+		invariant(affectsMultiple, "hex enhanceable must have affectsMultiple");
+		invariant(
+			typeof baseNumHexes === "number",
+			"hex enhanceable must have baseNumHexes"
+		);
+	} else {
+		invariant(
+			baseNumHexes === undefined,
+			"non-hex enhanceables cannot have baseNumHexes"
+		);
+	}
+
+	invariant(canAffectMultiple(plus1Target) || !affectsMultiple);
+}

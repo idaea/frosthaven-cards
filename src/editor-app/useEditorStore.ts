@@ -15,6 +15,7 @@ import {
 } from "../common/card-dimensions";
 import { bundledCardAnnotations } from "../bundledCardAnnotations";
 import type { Coords } from "../common/geometry/Coords";
+import { merge } from "lodash-es";
 
 const nanoid = customAlphabet(
 	"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
@@ -33,7 +34,7 @@ export interface State {
 		placeDot: (protoDot: { cardId: string; coords: Coords }) => void;
 
 		selectDot: (protoDot: { cardId: string; dotId: string }) => void;
-		editSelectedDot: (dotDelta: Partial<Dot>) => void;
+		editSelectedDot: (dotDelta: PartialDeep<Dot>) => void;
 		deleteSelectedDot: () => void;
 		clearSelectedDot: () => void;
 	};
@@ -137,12 +138,12 @@ export const useEditorStore = createStore<State>()(
 								top: {
 									dots: [],
 									isLoss: false,
-									isPersistent: false,
+									hasPersistentIcon: false,
 								},
 								bottom: {
 									dots: [],
 									isLoss: false,
-									isPersistent: false,
+									hasPersistentIcon: false,
 								},
 							};
 						}
@@ -155,6 +156,7 @@ export const useEditorStore = createStore<State>()(
 								plus1Target: "attack",
 								affectsMultiple: false,
 								baseNumHexes: undefined,
+								isPersistent: false,
 							},
 						});
 						state.dots.selectedDot = {
@@ -187,15 +189,11 @@ export const useEditorStore = createStore<State>()(
 							const dot = dots.find((x) => x.id === dotId);
 
 							if (dot) {
-								if (dotDelta.coords) {
-									dot.coords = clampCoordsToCardHalf(
-										dotDelta.coords,
-										cardHalfName
-									);
-								}
-								if (dotDelta.enhanceableDetails) {
-									dot.enhanceableDetails = dotDelta.enhanceableDetails;
-								}
+								merge(dot, dotDelta);
+								dot.coords = clampCoordsToCardHalf(
+									dot.coords,
+									cardHalfName
+								);
 								return;
 							}
 						}
@@ -235,12 +233,12 @@ export const useEditorStore = createStore<State>()(
 						top: {
 							dots: [],
 							isLoss: false,
-							isPersistent: false,
+							hasPersistentIcon: false,
 						},
 						bottom: {
 							dots: [],
 							isLoss: false,
-							isPersistent: false,
+							hasPersistentIcon: false,
 						},
 					};
 					state.cardAnnotationsLookup[cardId] = existing;
@@ -248,15 +246,16 @@ export const useEditorStore = createStore<State>()(
 					if (newDetails.top?.isLoss !== undefined) {
 						existing.top.isLoss = newDetails.top?.isLoss;
 					}
-					if (newDetails.top?.isPersistent !== undefined) {
-						existing.top.isPersistent = newDetails.top?.isPersistent;
+					if (newDetails.top?.hasPersistentIcon !== undefined) {
+						existing.top.hasPersistentIcon =
+							newDetails.top?.hasPersistentIcon;
 					}
 					if (newDetails.bottom?.isLoss !== undefined) {
 						existing.bottom.isLoss = newDetails.bottom?.isLoss;
 					}
-					if (newDetails.bottom?.isPersistent !== undefined) {
-						existing.bottom.isPersistent =
-							newDetails.bottom?.isPersistent;
+					if (newDetails.bottom?.hasPersistentIcon !== undefined) {
+						existing.bottom.hasPersistentIcon =
+							newDetails.bottom?.hasPersistentIcon;
 					}
 				});
 			},
