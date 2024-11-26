@@ -11614,6 +11614,15 @@
 						"plus1Target": "retaliate"
 					},
 					"id": "hENzD"
+				},
+				{
+					"coords": [0.6264870788580112, 0.6245833333333332],
+					"enhanceableDetails": {
+						"affectsMultiple": false,
+						"dotShape": "circle",
+						"plus1Target": "move"
+					},
+					"id": "03f0k"
 				}
 			],
 			"isLoss": true,
