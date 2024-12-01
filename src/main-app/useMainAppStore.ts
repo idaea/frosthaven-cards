@@ -9,6 +9,8 @@ import { calculateCost } from "../common/calculator/calculateCost";
 
 import type { DotViewModel } from "./viewModelDatabase";
 import { EnhancementPermanence } from "../common/calculator/PricingStrategies";
+import { cardDatabase } from "../card-data";
+import invariant from "tiny-invariant";
 
 type EnhancerLevel = 1 | 2 | 3 | 4;
 export interface State {
@@ -23,6 +25,9 @@ export interface State {
 	dotIDToSticker: Record<string, StickerTypeID>;
 	addSticker: (dotID: string, stickerTypeID: StickerTypeID) => void;
 	removeSticker: (dotID: string) => void;
+
+	toggleCardSelected: (cardId: string) => void;
+	cardIsSelected: Record<string, boolean>;
 }
 
 export const useMainAppStore = createStore<State>()(
@@ -60,12 +65,49 @@ export const useMainAppStore = createStore<State>()(
 					delete state.dotIDToSticker[dotID];
 				});
 			},
+
+			toggleCardSelected: (cardID) => {
+				set((state) => {
+					const card = cardDatabase.lookup.get(cardID);
+					invariant(!!card);
+					if (card.level === 1) {
+						if (state.cardIsSelected[cardID] === undefined) {
+							state.cardIsSelected[cardID] = false;
+						} else {
+							delete state.cardIsSelected[cardID];
+						}
+					} else if (state.cardIsSelected[cardID] === true) {
+						delete state.cardIsSelected[cardID];
+					} else {
+						state.cardIsSelected[cardID] = true;
+					}
+				});
+			},
+			cardIsSelected: {},
 		})),
 		{
 			name: "card-choices",
 			storage: createJSONStorage(() => localStorage),
 		}
 	)
+);
+
+export const selectCardIsSelected = createSelector(
+	[
+		(state: State) => state.cardIsSelected,
+		(_state: State, cardID: string) => cardID,
+	],
+	(cardIsSelected, cardID) => {
+		const card = cardDatabase.lookup.get(cardID);
+
+		invariant(!!card);
+
+		if (card.level === 1) {
+			return cardIsSelected[cardID] !== false;
+		} else {
+			return cardIsSelected[cardID] === true;
+		}
+	}
 );
 
 const selectNumberOfStickersOnRelatedDots = createSelector(

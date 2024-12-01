@@ -1,12 +1,21 @@
 import type { IterableElement } from "type-fest";
 
 import type { Coords } from "./geometry/Coords";
+import { Region } from "./geometry/Region";
+import { coordsAreInRegion } from "./geometry/coords-utils";
 
 export const cardHalfNames = ["top", "bottom"] as const;
 export type CardHalfName = IterableElement<typeof cardHalfNames>;
 
 /** width / height */
 export const cardAspectRatio = 368 / 553;
+
+const cardHeaderRegion: Region = {
+	top: 0,
+	left: 0,
+	right: 1,
+	bottom: 0.1,
+};
 
 const cardHalfDimensions = {
 	top: {
@@ -39,4 +48,8 @@ export function clampCoordsToCardHalf(
 
 export function convertCoordsToCardHalf([_, y]: Coords): "top" | "bottom" {
 	return y > 0.5 ? "bottom" : "top";
+}
+
+export function isInCardHeader(coords: Coords): boolean {
+	return coordsAreInRegion(coords, cardHeaderRegion);
 }

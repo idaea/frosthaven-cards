@@ -2,7 +2,11 @@ import { Highlight } from "../common/Highlight";
 import { Card } from "../common/Card";
 import { enhancementStickerTypeLookup } from "../common/enhancementStickerTypes";
 
-import { selectCostCalculator, useMainAppStore } from "./useMainAppStore";
+import {
+	selectCardIsSelected,
+	selectCostCalculator,
+	useMainAppStore,
+} from "./useMainAppStore";
 import { StickerSelector } from "./StickerSelector";
 import type { CardViewModel, DotViewModel } from "./viewModelDatabase";
 import { getDotShapeIconSrc } from "../common/getDotShapeIconSrc";
@@ -21,8 +25,25 @@ export function MainAppCard({
 	const addSticker = useMainAppStore((state) => state.addSticker);
 	const removeSticker = useMainAppStore((state) => state.removeSticker);
 
+	const feature_canSelectCards = false;
+
+	const toggleSelected = useMainAppStore((state) => state.toggleCardSelected);
+	const cardIsSelected = useMainAppStore((state) =>
+		selectCardIsSelected(state, card.id)
+	);
+
 	return (
-		<Card id={card.id}>
+		<Card
+			id={card.id}
+			onHeaderClick={
+				feature_canSelectCards
+					? () => {
+							toggleSelected(card.id);
+						}
+					: undefined
+			}
+			isGhosted={feature_canSelectCards ? !cardIsSelected : false}
+		>
 			{card.dots.map((dot) => {
 				return (
 					<CardDot
