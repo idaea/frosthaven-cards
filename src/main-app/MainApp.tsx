@@ -123,16 +123,7 @@ function MainApp() {
 				/>
 			</div>
 
-			{selectedCharacter.isUnsupported ? (
-				<div className="mx-auto max-w-screen-sm text-center mt-12">
-					<p className="text-xl">
-						Sorry, my group hasn't unlocked this character. I can't enter
-						its data without seeing spoilers, so it's not supported in
-						this app yet.
-					</p>
-					<p className="text-xl mt-2">Please check back later!</p>
-				</div>
-			) : selectedCharacterIsLocked ? (
+			{selectedCharacterIsLocked ? (
 				<div className="mx-auto max-w-screen-sm text-center mt-12">
 					<p className="text-xl">This character is locked by default</p>
 					<TextButton

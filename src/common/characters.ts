@@ -27,7 +27,6 @@ export interface Character {
 	readonly colour: string;
 	readonly iconSrc: string;
 	readonly isAlwaysUnlocked?: boolean;
-	readonly isUnsupported?: boolean;
 }
 
 const rawCharacters = [
@@ -94,7 +93,6 @@ const rawCharacters = [
 		codename: "Shards",
 		colour: "#807681",
 		iconSrc: shattersongIcon,
-		isUnsupported: true,
 	},
 	{
 		id: "trapper",
@@ -116,7 +114,6 @@ const rawCharacters = [
 		codename: "Snowflake",
 		colour: "#5995A2",
 		iconSrc: snowdancerIcon,
-		isUnsupported: true,
 	},
 	{
 		id: "frozen fist",
@@ -138,7 +135,6 @@ const rawCharacters = [
 		codename: "Drill",
 		colour: "#A38B69",
 		iconSrc: metalMosaicIcon,
-		isUnsupported: true,
 	},
 	{
 		id: "deepwraith",
@@ -146,7 +142,6 @@ const rawCharacters = [
 		codename: "Kelp",
 		colour: "#624278",
 		iconSrc: deepwraithIcon,
-		isUnsupported: true,
 	},
 	{
 		id: "crashing tide",
