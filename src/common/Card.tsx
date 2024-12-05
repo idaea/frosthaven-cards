@@ -14,7 +14,7 @@ import { cardDatabase } from "../card-data";
 import { isLeftButtonDepressed } from "../util/isLeftButtonDepressed";
 
 import type { Coords } from "./geometry/Coords";
-import { cardAspectRatio, isInCardHeader } from "./card-dimensions";
+import { cardAspectRatio } from "./card-dimensions";
 
 export function Card({
 	id: cardId,
