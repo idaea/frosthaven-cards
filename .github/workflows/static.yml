@@ -1,3 +1,6 @@
+# Modified from starter template:
+# https://raw.githubusercontent.com/actions/starter-workflows/refs/heads/main/pages/static.yml
+
 # Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
@@ -24,13 +27,13 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout Git
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
       - name: Setup PNPM, install NPM packages
@@ -40,11 +43,11 @@ jobs:
       - name: Build application bundle
         run: pnpm run build
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: "dist"
       - name: Deploy to GitHub Pages
         id: deployment # ID used above to get page URL
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
