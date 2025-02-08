@@ -12592,7 +12592,7 @@
 				{
 					"coords": [0.6231411427080615, 0.1875],
 					"enhanceableDetails": {
-						"affectsMultiple": false,
+						"affectsMultiple": true,
 						"dotShape": "square",
 						"isPersistent": false,
 						"plus1Target": "attack"
