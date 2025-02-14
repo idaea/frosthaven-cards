@@ -6335,7 +6335,7 @@
 						"affectsMultiple": false,
 						"dotShape": "circle",
 						"isPersistent": false,
-						"plus1Target": "attack"
+						"plus1Target": "move"
 					},
 					"id": "Sm58L"
 				}
