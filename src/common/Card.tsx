@@ -39,8 +39,8 @@ export function Card({
 }) {
 	const rootRef = useRef<HTMLDivElement | null>(null);
 	const imageRef = useRef<HTMLImageElement | null>(null);
-	const lastMousePosRef = useRef<Coords>();
-	const mouseDownTime = useRef<number | undefined>();
+	const lastMousePosRef = useRef<Coords | undefined>(undefined);
+	const mouseDownTime = useRef<number | undefined>(undefined);
 
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 
