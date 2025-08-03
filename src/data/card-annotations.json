@@ -6815,7 +6815,7 @@
 				{
 					"coords": [0.3907986939134901, 0.253125],
 					"enhanceableDetails": {
-						"affectsMultiple": false,
+						"affectsMultiple": true,
 						"dotShape": "square",
 						"isPersistent": false,
 						"plus1Target": "attack"
@@ -6825,7 +6825,7 @@
 				{
 					"coords": [0.7218696114759511, 0.2546875],
 					"enhanceableDetails": {
-						"affectsMultiple": false,
+						"affectsMultiple": true,
 						"dotShape": "square",
 						"isPersistent": false,
 						"plus1Target": "range"
@@ -11195,7 +11195,7 @@
 				{
 					"coords": [0.4342551526219671, 0.19722222222222222],
 					"enhanceableDetails": {
-						"affectsMultiple": false,
+						"affectsMultiple": true,
 						"dotShape": "diamond",
 						"isPersistent": false,
 						"plus1Target": "attack"
