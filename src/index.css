@@ -25,5 +25,5 @@ label {
 
 @font-face {
 	font-family: Gloomhaven;
-	src: url("./submodules/frosthaven-data/images/art/frosthaven/fonts/PirataOne-Gloomhaven.ttf");
+	src: url("./frosthaven-data/PirataOne-Gloomhaven.ttf");
 }

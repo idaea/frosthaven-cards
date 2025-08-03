@@ -36,7 +36,7 @@ export default function rollupPlugin(): Plugin {
 				await fs.readFile(
 					url.fileURLToPath(
 						import.meta.resolve(
-							"./src/submodules/frosthaven-data/data/character-ability-cards.js"
+							"./src/frosthaven-data/character-ability-cards.json"
 						)
 					),
 					{ encoding: "utf-8" }
@@ -53,7 +53,7 @@ export default function rollupPlugin(): Plugin {
 			return [
 				...dedupedCardData.map(
 					(card) =>
-						`import card${card.cardno} from "./src/submodules/frosthaven-data/images/${card.image}?h=400&format=webp";`
+						`import card${card.cardno} from "./src/frosthaven-data/character-ability-cards/${card.image}?h=400&format=webp";`
 				),
 				`export const data = [`,
 				dedupedCardData

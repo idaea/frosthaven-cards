@@ -2,7 +2,7 @@ import squareSvg from "../images/square.svg";
 import diamondSvg from "../images/diamond.svg";
 import diamondPlusSvg from "../images/diamond-plus.svg";
 import circleSvg from "../images/circle.svg";
-// import hexSvg from "../submodules/frosthaven-data/images/art/frosthaven/icons/general/fh-hex-empty-color-icon.png";
+// import hexSvg from "../frosthaven-data/icons/general/fh-hex-empty-color-icon.png";
 import hexSvg from "../images/hex.svg";
 
 import { DotShape } from "../card-data";

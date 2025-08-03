@@ -1,10 +1,10 @@
 import type { ClassValue } from "clsx";
 import clsx from "clsx";
 import invariant from "tiny-invariant";
-import trapIcon from "../submodules/frosthaven-data/images/art/frosthaven/icons/characters/fh-trapper-bw-icon.png";
-import tokenIcon from "../submodules/frosthaven-data/images/art/frosthaven/icons/class/fh-deathwalker-shadow-bw-icon.png";
-import strengthenIcon from "../submodules/frosthaven-data/images/art/frosthaven/icons/conditions/fh-strengthen-bw-icon.png";
-import poisonIcon from "../submodules/frosthaven-data/images/art/frosthaven/icons/conditions/fh-poison-bw-icon.png";
+import trapIcon from "../frosthaven-data/icons/characters/fh-trapper-bw-icon.png";
+import tokenIcon from "../frosthaven-data/icons/class/fh-deathwalker-shadow-bw-icon.png";
+import strengthenIcon from "../frosthaven-data/icons/conditions/fh-strengthen-bw-icon.png";
+import poisonIcon from "../frosthaven-data/icons/conditions/fh-poison-bw-icon.png";
 
 import type {
 	PlayerPlus1Target,
